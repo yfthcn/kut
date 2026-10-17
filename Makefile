@@ -1,6 +1,6 @@
 LDFLAGS := -s -w
 
-.PHONY: build linux sums test run-dry clean
+.PHONY: build linux sums test run-dry screenshots clean
 
 build:
 	CGO_ENABLED=0 go build -trimpath -ldflags "$(LDFLAGS)" -o dist/kut .
@@ -23,6 +23,10 @@ run-dry: build
 	@test -f ./data/server.json || ./dist/kut init -dry-run -data ./data -endpoint 203.0.113.10
 	@test -f ./data/admin.json  || ./dist/kut passwd -data ./data
 	./dist/kut serve -dry-run -data ./data
+
+# README ekran görüntüleri: /tmp/kut-demo'da sahte verili dry-run, headless Chrome; sonunda demo dizini silinir.
+screenshots:
+	node tools/screenshots/shoot.mjs
 
 clean:
 	rm -rf dist data

@@ -14,6 +14,16 @@ A single-binary admin panel for WireGuard. Go standard library only, zero depend
 
 **Design:** hub-and-spoke VPN. Devices connect to the server and the server forwards traffic between them. By default nobody's internet traffic goes through the VPN; "internet exit" can be enabled per device.
 
+![Kut dashboard: device count, network map, items needing attention and the last hour of traffic](docs/screenshots/01-dashboard.png)
+
+| | |
+|---|---|
+| ![Devices](docs/screenshots/02-devices.png)<br>Devices: live status, traffic, group and access profile per device. | ![Devices on a phone](docs/screenshots/05-devices-mobile.png)<br>The same list on a phone, with the bottom navigation bar. |
+| ![Status report](docs/screenshots/03-status-report.png)<br>Status report: security and device checks plus the device-to-device access matrix. | ![Firewall rules](docs/screenshots/04-server-rules.png)<br>Server tab: every rule Kut writes, with live packet and byte counters. |
+| ![Dashboard in light theme](docs/screenshots/06-dashboard-light.png)<br>Dashboard in the light theme. | |
+
+<sub>Screenshots use made-up demo data (`make screenshots`).</sub>
+
 > 🇹🇷 Türkçe özet için: [Türkçe özet](#türkçe-özet)
 
 ## Installation (Ubuntu / Debian)
