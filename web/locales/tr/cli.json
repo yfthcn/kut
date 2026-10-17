@@ -1,0 +1,121 @@
+{
+  "cli": {
+    "tagline": "WireGuard yönetim paneli",
+    "error_prefix": "hata:",
+    "no_service": "Kut servisine bağlanılamadı (çalışıyor mu? sudo systemctl status kut). {err}",
+    "no_permission": "Kut soketine erişim izni yok: komutu sudo ile çalıştırın (sudo kut …). {err}",
+    "unknown_command": "bilinmeyen komut: {cmd}",
+    "did_you_mean": "bunu mu demek istediniz: {cmd}?",
+    "usage": "{app} {version} — {tagline}\n\nKullanım:\n  kut init   -endpoint <ip|alan-adı> [-port 51820] [-subnet 10.77.0.0/24] [-iface wg0] [-lang tr|en] [-data DİZİN] [-dry-run]\n  kut passwd [-data DİZİN] [-user HESAP]\n  kut serve  [-data DİZİN] [-listen ADRES:PORT] [-dry-run]\n  kut add    -name AD [-note NOT] [-ip IP] [-internet] [-policy PROFİL] [-expires 8h|3d|2w] [-o dosya.conf]   (çalışan servise cihaz ekler, QR basar)\n  kut list   [-data DİZİN]                                                              (cihazları listeler)\n  kut doctor [-data DİZİN] [-json]                                                      (kurulumu denetler; hata varsa çıkış kodu 1)\n  kut 2fa-off [-data DİZİN] [-user HESAP]                                                         (panel 2FA'sını kapatır; telefon kaybında kurtarma)\n  kut backup  [-data DİZİN] [-o dosya.tar.gz] [-encrypt]                                (ayar + cihaz yedeği; ÖZEL ANAHTAR içerir; -encrypt parolayla şifreler)\n  kut restore -f dosya.tar.gz [-data DİZİN] [-force] [-endpoint YENİ-IP|ALAN-ADI]       (servis durmuşken geri yükler; şifreliyse parola sorar)\n  kut install [--endpoint X] [--port N] [--subnet CIDR] [--iface AD] [--device AD] [--lang tr|en] [--yes]   (bu ikiliyi servis olarak kurar ya da yükseltir; root)\n  kut uninstall [-purge] [-yes] [-dry-run]                                     (Kut'u kaldırır; önce şifreli yedek yazar; -purge veriyi de siler)\n  kut version\n\n-dry-run: wg/iptables'a dokunmaz, yapılandırmayı veri dizinine yazar. Yerelde denemek için.\n",
+    "flag": {
+      "usage_of": "{name} için kullanım:",
+      "default": "(varsayılan: {v})",
+      "data": "veri dizini",
+      "lang": "çıktı dili: tr | en",
+      "add_name": "cihaz adı (zorunlu)",
+      "add_note": "not",
+      "add_internet": "internet çıkışı açık olsun",
+      "add_ip": "VPN IP'si (boşsa otomatik)",
+      "add_policy": "erişim profili adı",
+      "add_expires": "misafir cihaz: bu süre sonra kapanır (örn. 8h, 3d, 2w)",
+      "add_out": "yapılandırmayı bu dosyaya da yaz (0600)",
+      "add_no_qr": "QR çizme",
+      "doctor_json": "JSON çıktısı",
+      "init_endpoint": "sunucunun genel IP'si veya alan adı (zorunlu)",
+      "init_port": "WireGuard UDP portu",
+      "init_subnet": "VPN alt ağı",
+      "init_iface": "arayüz adı",
+      "init_dry_run": "gerçek wg yapılandırmasına dokunma",
+      "init_force": "mevcut /etc/wireguard dosyasının üzerine yaz",
+      "init_allow_overlap": "alt ağ bu makinedeki bir ağla çakışsa da devam et",
+      "init_lang": "sunucunun varsayılan dili: tr ya da en (bildirim, CLI ve kut doctor bunu izler; verilmezse ortam dili, o da yoksa tr)",
+      "passwd_user": "hesap adı (boşsa sahip: admin)",
+      "serve_listen": "dinlenecek adres (varsayılan: <VPN sunucu IP'si>:5000, dry-run'da 127.0.0.1:5000)",
+      "serve_dry_run": "wg/iptables çağırma"
+    },
+    "init": {
+      "bad_lang": "geçersiz -lang (tr ya da en olmalı)",
+      "bad_endpoint": "-endpoint: {err}",
+      "bad_port": "geçersiz -port",
+      "bad_iface": "geçersiz -iface",
+      "bad_subnet": "-subnet özel bir IPv4 alt ağı olmalı (10/8, 172.16/12, 192.168/16 ya da 100.64/10 içinde; /{min} ile /{max} arası, örn. 10.77.0.0/24)",
+      "subnet_not_network": "-subnet ağ adresiyle başlamalı (örn. {want})",
+      "already": "{data} zaten başlatılmış; anahtarlar korunuyor, bir şey yapılmadı",
+      "conf_exists": "{conf} zaten var; mevcut VPN'i ezmemek için durdum (bilerek ezmek istiyorsan -force)",
+      "overlap": "-subnet {net} bu makinedeki {local} ağıyla çakışıyor; başka bir ağ seç (örn. {example}) ya da bilerek istiyorsan -allow-overlap ekle",
+      "done": "Hazır.\n  yapılandırma : {conf}\n  veri dizini  : {data}\n  sunucu IP'si : {ip}\n  açık anahtar : {key}\n"
+    },
+    "passwd": {
+      "prompt": "Yeni yönetici parolası (en az 10 karakter): ",
+      "again": "Tekrar: ",
+      "mismatch": "parolalar uyuşmuyor",
+      "saved_live": "Parola kaydedildi; hesabın açık oturumları kapatıldı.",
+      "saved_restart": "Parola kaydedildi. Açık oturumlar için servisi yeniden başlat: sudo systemctl restart kut",
+      "saved": "Parola kaydedildi."
+    },
+    "add": {
+      "name_required": "-name zorunlu",
+      "policy_missing": "\"{name}\" adında erişim profili yok",
+      "access_vpn": "yalnızca VPN ağı",
+      "access_inet": "VPN + internet çıkışı",
+      "done": "Cihaz eklendi: {name}  {ip}  ({access})",
+      "shown_once": "Bu yapılandırma yalnızca şimdi gösteriliyor; özel anahtar sunucuda saklanmaz.",
+      "scan": "Telefonda WireGuard uygulaması > Tünel ekle > QR kodu tara.",
+      "config_header": "--- yapılandırma ---",
+      "written": "--- {path} dosyasına da yazıldı ---"
+    },
+    "list": {
+      "empty": "Henüz cihaz yok. Eklemek için: kut add -name ALI",
+      "head": {
+        "device": "CİHAZ",
+        "ip": "IP",
+        "state": "DURUM",
+        "internet": "İNTERNET",
+        "profile": "PROFİL",
+        "seen": "SON GÖRÜLME"
+      },
+      "state": {
+        "online": "çevrimiçi",
+        "active": "çevrimdışı",
+        "disabled": "kapalı",
+        "frozen": "donduruldu",
+        "expired": "süresi doldu",
+        "outside": "saat dışı"
+      },
+      "yes": "evet",
+      "no": "hayır",
+      "never": "hiç",
+      "now": "şimdi",
+      "ago": "{dur} önce",
+      "guest": "  (misafir: {dur} sonra kapanır)"
+    },
+    "doctor": {
+      "ok": { "one": "{n} tamam", "other": "{n} tamam" },
+      "warn": { "one": "{n} uyarı", "other": "{n} uyarı" },
+      "fail": { "one": "{n} hata", "other": "{n} hata" }
+    }
+  },
+  "err": {
+    "span": {
+      "invalid": "süre anlaşılamadı: \"{value}\" (örn. 8h, 3d, 2w)",
+      "too_long": "süre en fazla 1 yıl olabilir"
+    },
+    "wg": {
+      "bad_private_key": "geçersiz özel anahtar",
+      "conf_write_failed": "yapılandırma yazılamadı: {err}"
+    },
+    "qr": {
+      "too_long": "QR için veri çok uzun"
+    },
+    "store": {
+      "migrate_backup_create": "geçiş yedeği oluşturulamadı: {err}",
+      "migrate_backup_write": "geçiş yedeği yazılamadı: {err}",
+      "no_server": "sunucu yapılandırması okunamadı (önce `kut init` çalıştır): {err}",
+      "read_failed": "{file} okunamadı: {err}",
+      "no_admin": "yönetici parolası yok (önce `kut passwd` çalıştır): {err}",
+      "newer_schema": "veri dizini daha yeni bir Kut sürümüyle oluşturulmuş (şema {have} > {max}); önce Kut'u güncelle",
+      "invalid_data": "{dir} içindeki veri geçersiz, panel açılmıyor (elle düzelt ya da geçerli bir yedeği geri yükle): {err}",
+      "invalid_conf": "{dir} içindeki veri geçersiz, panel açılmıyor: {err}"
+    }
+  }
+}

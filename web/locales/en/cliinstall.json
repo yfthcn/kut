@@ -1,0 +1,37 @@
+{
+  "cli": {
+    "flag": {
+      "uninstall_purge": "also delete the data directory (devices, keys, accounts, logs, backups)",
+      "uninstall_yes": "do not ask for confirmation",
+      "uninstall_dry_run": "only print what would be removed"
+    },
+    "install": {
+      "need_root": "run as root: sudo kut install",
+      "no_bash": "bash is required to run the installer: {err}"
+    },
+    "uninstall": {
+      "need_root": "run as root: sudo kut uninstall",
+      "plan_head": "Kut will be removed from this server:",
+      "step_backup": "write an encrypted backup to {path}",
+      "step_no_backup": "no backup (no Kut data in {data})",
+      "step_units": "stop and disable {units}",
+      "step_firewall": "remove the KUT-* chains and Kut's jumps in INPUT, FORWARD and nat POSTROUTING (IPv4 and IPv6)",
+      "step_ufw": "remove the ufw rule {port}/udp that the Kut installer added",
+      "step_no_ufw": "leave ufw and Docker rules alone (the installer did not add a ufw rule)",
+      "step_files": "delete files:",
+      "step_reload": "systemctl daemon-reload",
+      "step_purge": "delete the data directory {data}",
+      "step_keep": "keep the data directory {data} (use -purge to delete it)",
+      "forward_note": "net.ipv4.ip_forward stays on until the next reboot (other services such as Docker may rely on it).",
+      "dry_run": "Dry run: nothing was changed.",
+      "confirm": "Continue? (y/N)",
+      "aborted": "Aborted; nothing was changed.",
+      "need_yes": "standard input is not a terminal: pass -yes to confirm",
+      "backup_written": "Backup written: {path} (encrypted; restore with: kut restore -f {path})",
+      "warn": "warning: {step}: {err}",
+      "done": "Kut has been removed.",
+      "bad_data": "refusing to delete {data}: -purge needs a Kut data directory (with server.json) at an absolute path other than /",
+      "iface_up": "the interface {iface} is still up, so Kut's firewall rules were left in place (removing them could let traffic through). Run: sudo wg-quick down {iface} && sudo kut uninstall"
+    }
+  }
+}

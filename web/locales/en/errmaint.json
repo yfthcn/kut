@@ -1,0 +1,60 @@
+{
+  "err": {
+    "maint": {
+      "bad_freq": "Invalid backup frequency.",
+      "bad_time": "Time must be in HH:MM format (e.g. 03:30).",
+      "bad_keep": "The number of backups to keep must be between 1 and 60.",
+      "bad_log_days": "Log retention must be at least 7 days (0 = unlimited).",
+      "panic": "An unexpected error occurred; details are in the server log."
+    },
+    "backup": {
+      "create_failed": "Could not create the backup: {msg}",
+      "bad_name": "Invalid backup name.",
+      "not_found": "Backup not found.",
+      "too_large": "File is too large (max {mb} MB).",
+      "upload_bad_form": "Invalid upload: the file and fields must be sent as multipart/form-data.",
+      "upload_no_file": "The upload contains no backup file.",
+      "upload_unknown_field": "Unknown field in the upload: {name}",
+      "upload_duplicate_field": "The {name} field appears more than once in the upload.",
+      "owner_bad_password": "Owner password is wrong.",
+      "owner_code_required": "Two-step verification is on: a verification code is required.",
+      "owner_bad_code": "Verification code is wrong.",
+      "unreadable": "Could not read the backup: {msg}",
+      "corrupt": "The backup is corrupt: {msg}",
+      "unexpected_entry": "Unexpected entry in the backup: {name}",
+      "duplicate_entry": "The backup contains {name} twice",
+      "entry_too_large": "{name} in the backup is too large (max {mb} MB)",
+      "missing_file": "The backup has no {name}; this is not a valid Kut backup",
+      "invalid_file": "{name} in the backup is invalid",
+      "newer_version": "The backup is from a newer Kut version; update Kut first",
+      "rejected": "Backup rejected: {msg}",
+      "pre_backup_failed": "Could not take the pre-restore backup: {msg}",
+      "write_failed": "Could not write {name}: {msg}",
+      "restore_failed": "{msg} (the previous state is in backup {pre})"
+    },
+    "notify": {
+      "bad_token": "Bot token format is wrong (example: 123456789:AAH…). Paste it exactly as you got it from @BotFather.",
+      "bad_chat_id": "A chat ID consists of digits only. Use the \"Find chat\" button.",
+      "telegram_incomplete": "Turning on Telegram requires a bot token and a chat ID.",
+      "bad_webhook_url": "Webhook URL must start with http:// or https://.",
+      "webhook_no_url": "Turning on the webhook requires a URL.",
+      "bad_quiet_time": "Quiet hours must be in HH:MM format (e.g. 23:00).",
+      "quiet_incomplete": "Quiet hours need both a start and an end.",
+      "no_channel": "Turn on a channel and save first.",
+      "no_token": "Paste the bot token first.",
+      "no_chat_yet": "No messages yet. Open @{bot} in Telegram, send /start, then try again.",
+      "telegram_unreachable": "Could not reach Telegram: {msg}",
+      "telegram_bad_response": "Telegram sent an unexpected response.",
+      "telegram_error": "Telegram: {msg}",
+      "webhook_invalid": "Webhook URL is invalid",
+      "webhook_unreachable": "Could not reach the webhook target",
+      "webhook_rejected": "The webhook target did not accept the request"
+    },
+    "update": {
+      "unreachable": "Could not connect to GitHub",
+      "no_release": "No release has been published yet",
+      "http": "GitHub returned {status}",
+      "bad_response": "Could not read the response"
+    }
+  }
+}

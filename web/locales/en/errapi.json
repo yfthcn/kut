@@ -1,0 +1,170 @@
+{
+  "err": {
+    "account": {
+      "admin_unreadable": "Could not read the admin record: {msg}",
+      "no_such": "No account named {name}.",
+      "not_found": "Account not found.",
+      "users_unreadable": "Could not read users.json: {msg}"
+    },
+    "apply": {
+      "failed": "Could not apply: {msg}",
+      "not_saved": "Applied, but could not be saved: {msg}"
+    },
+    "auth": {
+      "admin_required": "This action requires an admin account.",
+      "owner_required": "This action is only available to the owner account (admin)."
+    },
+    "bulk": {
+      "bad_action": "Unknown action.",
+      "none_selected": "Select at least one device.",
+      "not_found": "One of the selected devices was not found. Refresh the page."
+    },
+    "crypt": {
+      "bad_format": "Invalid encrypted backup format.",
+      "bad_header": "Invalid encrypted backup header.",
+      "bad_pass": "Wrong passphrase or corrupted file.",
+      "need_pass": "This backup is encrypted with a passphrase; enter it.",
+      "pass_length": "The backup passphrase must be {min}-{max} characters and contain no line breaks."
+    },
+    "ip": {
+      "in_use": "{ip} is already used by the device “{name}”.",
+      "is_broadcast": "This is the network broadcast address and cannot be given to a device.",
+      "is_network": "This is the network address itself and cannot be given to a device.",
+      "is_server": "This address is reserved for the server.",
+      "not_ipv4": "The IP must be a valid IPv4 address (e.g. {example}).",
+      "outside": "The IP must be inside the VPN network ({subnet}).",
+      "pool_full": "No free IP is left in the subnet."
+    },
+    "password": {
+      "local_channel": "The password cannot be changed over the local channel; use `kut passwd`.",
+      "save_failed": "Could not save the password: {msg}",
+      "too_short": "The new password must be at least {min} characters.",
+      "wrong_current": "The current password is wrong."
+    },
+    "peer": {
+      "bad_freeze_time": "The duration must be between 1 minute and 90 days.",
+      "bad_group": "The group name must be 1-32 characters (letters, digits, spaces, . _ -).",
+      "bad_kind": "Unknown device type.",
+      "bad_name": "The name must be 1-32 characters (letters, digits, spaces, . _ -).",
+      "bad_note": "The note can be at most {limit} characters and cannot contain line breaks.",
+      "expiry_too_long": "The validity period can be at most 1 year.",
+      "freeze_disabled": "A disabled device cannot be frozen; enable it first.",
+      "key_failed": "Could not generate keys: {msg}",
+      "name_taken": "A device with this name already exists.",
+      "not_found": "Device not found."
+    },
+    "policy": {
+      "bad_group": "Invalid group name: {group}",
+      "bad_name": "The profile name must be 1-32 characters (letters, digits, spaces, . _ -).",
+      "desc_invalid": "Description: at most {limit} characters, no line breaks.",
+      "group_claimed": "The group “{group}” is already the default of the profile “{policy}”.",
+      "in_use": {
+        "one": "{n} device uses this profile ({devices}). Assign it to another profile or remove the profile first.",
+        "other": "{n} devices use this profile ({devices}). Assign them to another profile or remove the profile first."
+      },
+      "name_taken": "An access profile with this name already exists.",
+      "not_found": "Access profile not found.",
+      "too_many_groups": "At most {max} groups can be selected.",
+      "too_many_rules": "At most {max} rules can be added."
+    },
+    "reach": {
+      "bad_port": "The port must be between 1 and 65535.",
+      "bad_proto": "The protocol must be tcp, udp or icmp.",
+      "src_not_found": "Source device not found."
+    },
+    "rule": {
+      "bad_proto": "Rule {n}: the protocol must be tcp, udp, icmp or any.",
+      "bad_target": "Rule {n}: the target must be the server, a device or all devices.",
+      "both_single": "Rule {n}: \"mutual\" can only be used with a single device target.",
+      "device_missing": "Rule {n}: the device in the rule was not found.",
+      "device_only": "Rule {n}: a device can only be chosen when the target is \"device\".",
+      "note_invalid": "Rule {n}: rule note: at most {limit} characters, no line breaks.",
+      "port_bad": "Rule {n}: invalid port: {port} (1-65535, e.g. 8000-8100 for a range).",
+      "port_empty_item": "Rule {n}: the port list has an empty item.",
+      "port_too_many": "Rule {n}: at most {max} ports or ranges can be given.",
+      "ports_tcp_udp_only": "Rule {n}: ports can only be given for TCP or UDP.",
+      "schedule_bad_day": "Rule {n}: rule schedule: the day must be between 0 (Sunday) and 6 (Saturday).",
+      "schedule_bad_scope": "Rule {n}: rule schedule: the scope must be 'tunnel' or 'internet'.",
+      "schedule_bad_time": "Rule {n}: rule schedule: times must be in HH:MM format (e.g. 08:00).",
+      "schedule_no_days": "Rule {n}: rule schedule: select at least one day.",
+      "schedule_same_time": "Rule {n}: rule schedule: the start and end time cannot be the same."
+    },
+    "schedule": {
+      "bad_day": "The day must be between 0 (Sunday) and 6 (Saturday).",
+      "bad_scope": "The scope must be 'tunnel' or 'internet'.",
+      "bad_time": "Times must be in HH:MM format (e.g. 08:00).",
+      "no_days": "Select at least one day.",
+      "same_time": "The start and end time cannot be the same."
+    },
+    "settings": {
+      "bad_keepalive": "Keepalive must be between 0 and 120 seconds.",
+      "bad_mtu": "MTU must be 0 (default) or between 1280 and 1500.",
+      "bad_port": "The port must be between 1 and 65535.",
+      "dns_invalid": "Invalid DNS address: {dns}",
+      "dns_too_many": "At most {max} DNS addresses can be entered.",
+      "endpoint_empty": "The endpoint cannot be empty (e.g. 203.0.113.10 or vpn.example.com).",
+      "endpoint_invalid": "The endpoint must be a valid IP address or domain name.",
+      "endpoint_port": "Do not add a port to the endpoint; enter the port in its own field.",
+      "endpoint_zone": "The endpoint cannot contain an IPv6 zone (%…).",
+      "need_ip6tables": "IPv6 needs ip6tables (sudo apt install iptables).",
+      "ula_failed": "Could not generate the IPv6 prefix."
+    },
+    "stream": {
+      "too_many": "Too many open live connections.",
+      "unsupported": "Streaming is not supported."
+    },
+    "totp": {
+      "already_off": "Two-factor authentication is already off.",
+      "already_on": "Two-factor authentication is already on.",
+      "already_on_setup": "Two-factor authentication is already on. Turn it off first to set it up again.",
+      "bad_code": "Wrong code. Enter the current 6-digit code from the app.",
+      "bad_password_or_code": "Wrong password or code.",
+      "key_failed": "Could not generate the key.",
+      "panel_only": "2FA can only be set up from the panel, with your own account.",
+      "recovery_failed": "Could not generate the recovery codes.",
+      "setup_expired": "The setup has expired. Start over."
+    },
+    "user": {
+      "bad_name": "The username must be 1-32 characters (lowercase letters, digits, . _ -) and not reserved.",
+      "bad_role": "The role must be 'admin' or 'viewer'.",
+      "name_taken": "This username already exists.",
+      "own_delete": "You cannot delete your own account.",
+      "own_role": "You cannot change your own role.",
+      "owner_fixed": "The owner account's role cannot be changed; change its password in Settings or with `kut passwd`.",
+      "owner_undeletable": "The owner account cannot be deleted."
+    },
+    "validate": {
+      "conf_path_iface": "server.json: conf_path {path} is not the interface configuration file ({iface}.conf).",
+      "conf_path_want": "server.json: conf_path must be {want}, not {path}.",
+      "dns": "server.json: invalid DNS {dns}",
+      "endpoint": "server.json: invalid endpoint {endpoint}",
+      "iface": "server.json: invalid interface name {iface}",
+      "keepalive": "server.json: invalid keepalive {keepalive} (0-120)",
+      "mtu": "server.json: invalid MTU {mtu} (0 or 1280-1500)",
+      "notify_chat": "notify.json: invalid Telegram chat ID",
+      "notify_quiet": "notify.json: quiet hour {value} must be in HH:MM format",
+      "notify_token": "notify.json: invalid Telegram bot token format",
+      "notify_webhook": "notify.json: the webhook address must be a valid address starting with http:// or https://",
+      "peer_id_dup": "peers.json: the ID ({id}) of device {name} is also used by another device",
+      "peer_ip_dup": "peers.json: the IP address {ip} of device {name} is also used by another device",
+      "peer_ip_range": "peers.json: the IP address {ip} of device {name} is not in the VPN network ({subnet})",
+      "peer_ip_reserved": "peers.json: the IP address {ip} of device {name} is the network, broadcast or server address",
+      "peer_key": "peers.json: the key of device {name} is invalid (base64, 32 bytes)",
+      "peer_name": "peers.json: the name of device #{n} is invalid: {name}",
+      "peer_pubkey_dup": "peers.json: the public key of device {name} is also used by another device",
+      "policy_rule": "policies.json: a rule of profile {policy} is invalid: {msg}",
+      "port": "server.json: invalid port {port} (1-65535)",
+      "server_key": "server.json: the server key is invalid (base64, 32 bytes)",
+      "server_unreadable": "Could not read server.json: {msg}",
+      "subnet_ipv4": "server.json: invalid subnet {subnet} (must be an IPv4 network)",
+      "subnet_range": "server.json: invalid subnet {subnet} (must be an IPv4 network between /{min} and /{max}, starting at the network address)",
+      "ula": "server.json: invalid IPv6 ULA prefix {ula} (must be a /64 inside fd00::/8)",
+      "user_dup": "users.json: the account {name} appears twice",
+      "user_name": "users.json: the name of account #{n} is invalid or reserved: {name}",
+      "user_role": "users.json: the role of account {name} is invalid: {role}"
+    }
+  },
+  "totp": {
+    "flag_user": "account name (the owner, admin, if empty)"
+  }
+}

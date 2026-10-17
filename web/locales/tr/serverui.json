@@ -1,0 +1,102 @@
+{
+  "serverui": {
+    "title": "Sunucu",
+    "intro": "WireGuard arayüzü ve Kut’un yönettiği güvenlik duvarı kuralları. Salt okunur; ayarlar Ayarlar sekmesinden değişir.",
+    "apply": "Yeniden uygula",
+    "apply_text": "Yapılandırma ve güvenlik duvarı kuralları baştan yazılır. Bağlı cihazların bağlantısı kopmaz.",
+    "apply_ok": "Uygula",
+    "applied": "Uygulandı",
+    "down": "Kapalı",
+    "default": "varsayılan",
+    "peers_line": "{active} etkin / {total} kayıtlı · çekirdekte {kernel}",
+    "kv": {
+      "address": "Adres",
+      "endpoint": "Uç nokta",
+      "public_key": "Genel anahtar",
+      "conf": "Yapılandırma",
+      "mtu": "MTU",
+      "listen": "Panel dinleme",
+      "devices": "Cihaz"
+    },
+    "fw": {
+      "title": "Güvenlik duvarı",
+      "note": "Kut yalnızca KUT-* zincirlerini yönetir; ufw ya da başka kurallarına dokunmaz. Zincirler boşken hiçbir şey geçmez (fail-closed).",
+      "ok": "Kurallar yerinde",
+      "out_of_sync": "Kurallar beklenenden farklı",
+      "no_jump": "Zincirler bağlı değil",
+      "down": "Arayüz kapalı",
+      "dry": "dry-run: uygulanmıyor",
+      "rules": "Kurallar ve canlı sayaçlar",
+      "rules_intro": "Kut'un yazdığı her kural bir yorum etiketi taşır (kut:…); sayaçlar kurala bu etiketle bağlanır ve 5 saniyede bir yenilenir. Tam iptables satırını görmek için satıra dokunun.",
+      "rules_empty": "Henüz kural yok: etkin cihaz eklenince burada görünür.",
+      "simulated": "dry-run: sayaçlar benzetimdir, iptables'tan okunmuyor.",
+      "filter_label": "Şunun kurallarını göster",
+      "filter_all": "Tümü",
+      "filter_system": "Sistem",
+      "chain_empty": "Bu süzgeçte bu zincirde kural yok.",
+      "col": {
+        "device": "Cihaz",
+        "kind": "Kural",
+        "target": "Hedef",
+        "port": "Port",
+        "action": "Eylem",
+        "packets": "Paket",
+        "bytes": "Bayt"
+      },
+      "show_raw": "iptables satırını göster",
+      "raw": "iptables satırı",
+      "copy": "Kopyala",
+      "copied": "Kopyalandı",
+      "copy_failed": "Kopyalanamadı; metni elle seçin.",
+      "reverse": "ters yön",
+      "any": "tümü",
+      "none": "—",
+      "target": {
+        "server": "Sunucu",
+        "all": "Tüm cihazlar",
+        "internet": "İnternet"
+      },
+      "chain": {
+        "forward": "Sunucunun üzerinden geçen trafik. Kut'un sabit kuralları en üsttedir: yanıtlar geçer, cihazlar arası trafik KUT-PEERS'e, internet trafiği KUT-INET'e gider, VPN'den gelen ya da VPN'e giden geri kalan her şey düşer.",
+        "input": "Sunucunun kendisine gelen trafik; VPN arayüzünden gelen her şey KUT-IN'e gider.",
+        "postrouting": "Çıkışta adres dönüşümü; VPN trafiği KUT-NAT'a gider.",
+        "kut_peers": "Erişim profillerinden gelen cihazlar arası izinler. Burada kabul edilmeyen düşer.",
+        "kut_in": "Her cihazın sunucunun hangi portlarına ulaşabileceği (yanıtlar, ping, profilsiz cihaza panel, profil kuralları).",
+        "kut_icmp": "ICMP hata iletileri (ör. yol MTU'su) yalnızca ait oldukları akışın bir tarafından gelirse kabul edilir.",
+        "kut_inet": "İnternet izni olan cihazların çıkışı; isteğe bağlı özel ağ engeliyle.",
+        "kut_nat": "İnternet izni olan cihazlar sunucunun adresiyle çıkar (MASQUERADE)."
+      },
+      "kind": {
+        "skel": "Sabit kural",
+        "est": "Açık bağlantıların yanıtları",
+        "icmp-related": "Açık bağlantıların ICMP hataları",
+        "ping": "Sunucuya ping",
+        "panel": "Panel (profilsiz)",
+        "peer": "Profil kuralı",
+        "peer-free": "VPN içinde serbest",
+        "server": "Profil kuralı (sunucu)",
+        "in-drop": "Sunucunun diğer portları kapalı",
+        "icmp-orig": "ICMP hatası, akışı başlatan",
+        "icmp-repl": "ICMP hatası, akışı yanıtlayan",
+        "icmp-drop": "Diğer ICMP hataları",
+        "inet-deny": "Özel ağ engeli",
+        "inet": "İnternet çıkışı",
+        "nat": "Adres dönüşümü"
+      },
+      "skel": {
+        "fwd-reply": "VPN cihazlarına yanıtlar",
+        "fwd-peer-reply": "Cihazlar arası yanıtlar",
+        "fwd-icmp": "Cihazlar arası ICMP hataları → KUT-ICMP",
+        "fwd-peers": "Cihazdan cihaza → KUT-PEERS",
+        "fwd-peers-drop": "Eşleşmeyen cihazlar arası: düşür",
+        "fwd-inet": "İnternete → KUT-INET",
+        "fwd-in-drop": "VPN'den gelen geri kalan: düşür",
+        "fwd-out-drop": "VPN'e yeni trafik: düşür",
+        "in": "Sunucuya → KUT-IN",
+        "nat": "VPN ağı → KUT-NAT"
+      }
+    },
+    "conf_note": "Özel ve ön paylaşımlı anahtarlar maskelenmiştir.",
+    "conf_show": "Yapılandırmayı göster"
+  }
+}

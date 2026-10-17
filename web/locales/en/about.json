@@ -1,0 +1,22 @@
+{
+  "about": {
+    "title": "About",
+    "not_checked": "Not checked yet; it will be checked automatically shortly.",
+    "check_off": "Update checking is off. Kut makes no outside connections; you can ask manually below or turn it on in Settings.",
+    "new_version": "New version available: {version}",
+    "release_notes": "Release notes",
+    "up_to_date": "You are up to date ({version}).",
+    "last_check": "Last checked: {when}",
+    "check_now": "Check now",
+    "k_version": "Version",
+    "k_schema": "Data schema",
+    "k_build": "Build",
+    "k_go": "Go",
+    "k_data_dir": "Data directory",
+    "k_started": "Started",
+    "tagline": "{tagline}. Single file, zero dependencies.",
+    "links": "Links",
+    "github": "GitHub: {repo}",
+    "updates": "Updates"
+  }
+}

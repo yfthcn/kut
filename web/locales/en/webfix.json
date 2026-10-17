@@ -1,0 +1,13 @@
+{
+  "webfix": {
+    "qr_label": "QR code",
+    "log_system": "system",
+    "chart": {
+      "aria": "Traffic chart: {range}",
+      "aria_named": "{name} traffic chart: {range}"
+    }
+  },
+  "logui": {
+    "local": "local"
+  }
+}

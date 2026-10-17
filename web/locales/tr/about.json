@@ -1,0 +1,22 @@
+{
+  "about": {
+    "title": "Hakkında",
+    "not_checked": "Henüz denetlenmedi; birazdan otomatik denetlenir.",
+    "check_off": "Güncelleme denetimi kapalı. Kut dışarıya bağlanmaz; istersen aşağıdan elle sorabilir ya da Ayarlar’dan açabilirsin.",
+    "new_version": "Yeni sürüm var: {version}",
+    "release_notes": "Sürüm notları",
+    "up_to_date": "Güncelsin ({version}).",
+    "last_check": "Son denetim: {when}",
+    "check_now": "Şimdi denetle",
+    "k_version": "Sürüm",
+    "k_schema": "Veri şeması",
+    "k_build": "Derleme",
+    "k_go": "Go",
+    "k_data_dir": "Veri dizini",
+    "k_started": "Başlatıldı",
+    "tagline": "{tagline}. Tek dosya, sıfır bağımlılık.",
+    "links": "Bağlantılar",
+    "github": "GitHub: {repo}",
+    "updates": "Güncelleme"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "notify": {
+    "new_ip_login": "Panel sign-in from a new IP: {who}",
+    "failed_logins": {
+      "one": "{n} failed sign-in attempt (within {min} min): {ip}",
+      "other": "{n} failed sign-in attempts (within {min} min): {ip}"
+    },
+    "password_changed": "Password changed: {who}",
+    "totp_off": "Two-step verification turned off: {who}",
+    "account": "{text} ({who})",
+    "cap": "Hourly notification limit reached; further notifications are skipped.",
+    "test": "Test notification: notifications are working."
+  }
+}

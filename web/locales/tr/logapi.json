@@ -1,0 +1,131 @@
+{
+  "log": {
+    "apply": "Yapılandırma ve güvenlik duvarı yeniden uygulandı",
+    "login": "Giriş yapıldı",
+    "login_fail": "Başarısız giriş denemesi",
+    "login_fail.code": "Başarısız giriş denemesi: doğrulama kodu yanlış",
+    "logout": "Çıkış yapıldı",
+    "password": "Parola değiştirildi; hesabın diğer oturumları kapatıldı",
+    "password.local": "Parola sunucudan (kut passwd) değiştirildi; hesabın oturumları kapatıldı: {name}",
+    "password_fail": "Parola değiştirme denemesi: mevcut parola yanlış",
+    "peer_bulk": {
+      "delete": {
+        "one": "Toplu işlem (sil): {n} cihaz — {names}",
+        "other": "Toplu işlem (sil): {n} cihaz — {names}"
+      },
+      "disable": {
+        "one": "Toplu işlem (kapat): {n} cihaz — {names}",
+        "other": "Toplu işlem (kapat): {n} cihaz — {names}"
+      },
+      "enable": {
+        "one": "Toplu işlem (aç): {n} cihaz — {names}",
+        "other": "Toplu işlem (aç): {n} cihaz — {names}"
+      },
+      "expires": {
+        "one": "Toplu işlem (geçerlilik): {n} cihaz — {names}",
+        "other": "Toplu işlem (geçerlilik): {n} cihaz — {names}"
+      },
+      "freeze": {
+        "one": "Toplu işlem (dondur): {n} cihaz — {names}",
+        "other": "Toplu işlem (dondur): {n} cihaz — {names}"
+      },
+      "group": {
+        "one": "Toplu işlem (grup): {n} cihaz — {names}",
+        "other": "Toplu işlem (grup): {n} cihaz — {names}"
+      },
+      "internet": {
+        "one": "Toplu işlem (internet çıkışı): {n} cihaz — {names}",
+        "other": "Toplu işlem (internet çıkışı): {n} cihaz — {names}"
+      },
+      "policy": {
+        "one": "Toplu işlem (erişim profili): {n} cihaz — {names}",
+        "other": "Toplu işlem (erişim profili): {n} cihaz — {names}"
+      },
+      "schedule": {
+        "one": "Toplu işlem (erişim saatleri): {n} cihaz — {names}",
+        "other": "Toplu işlem (erişim saatleri): {n} cihaz — {names}"
+      },
+      "unfreeze": {
+        "one": "Toplu işlem (dondurmayı kaldır): {n} cihaz — {names}",
+        "other": "Toplu işlem (dondurmayı kaldır): {n} cihaz — {names}"
+      }
+    },
+    "peer_create": {
+      "internet": "Cihaz eklendi: {name} ({ip}, VPN + internet çıkışı)",
+      "vpn": "Cihaz eklendi: {name} ({ip}, yalnızca VPN ağı)"
+    },
+    "peer_delete": "Cihaz silindi: {name} ({ip})",
+    "peer_delete.rules": {
+      "one": "Cihaz silindi: {name} ({ip}); erişim profillerinden {n} kural kaldırıldı",
+      "other": "Cihaz silindi: {name} ({ip}); erişim profillerinden {n} kural kaldırıldı"
+    },
+    "peer_edit": "Cihaz düzenlendi: {name}",
+    "peer_edit.expiry_removed": "Cihaz düzenlendi: {name}; süre sınırı kaldırıldı",
+    "peer_edit.expiry_set": "Cihaz düzenlendi: {name}; geçerlilik: {n} dk",
+    "peer_edit.group_none": "Cihaz düzenlendi: {name}; grup: yok",
+    "peer_edit.group_set": "Cihaz düzenlendi: {name}; grup: {group}",
+    "peer_edit.internet_off": "Cihaz düzenlendi: {name}; sunucuda internet çıkışı kapatıldı",
+    "peer_edit.internet_on": "Cihaz düzenlendi: {name}; sunucuda internet çıkışına izin verildi",
+    "peer_edit.kind_other": "Cihaz düzenlendi: {name}; tür: diğer",
+    "peer_edit.kind_set": "Cihaz düzenlendi: {name}; tür: {kind}",
+    "peer_edit.policy_removed": "Cihaz düzenlendi: {name}; erişim profili kaldırıldı",
+    "peer_edit.policy_set": "Cihaz düzenlendi: {name}; erişim profili: {policy}",
+    "peer_edit.rename": "Cihaz düzenlendi: {old} → {name}",
+    "peer_edit.schedule_internet": "Cihaz düzenlendi: {name}; erişim saatleri: {days} {from}–{to} (yalnızca internet)",
+    "peer_edit.schedule_removed": "Cihaz düzenlendi: {name}; erişim saatleri kaldırıldı",
+    "peer_edit.schedule_tunnel": "Cihaz düzenlendi: {name}; erişim saatleri: {days} {from}–{to} (tüm bağlantı)",
+    "peer_freeze": "Cihaz donduruldu: {name} ({n} dk)",
+    "peer_regenerate": {
+      "inet_inet": "Yapılandırma yeniden oluşturuldu: {name} (VPN + internet çıkışı → VPN + internet çıkışı)",
+      "inet_inet_ip": "Yapılandırma yeniden oluşturuldu: {name} (VPN + internet çıkışı → VPN + internet çıkışı); IP {old} → {new}",
+      "inet_vpn": "Yapılandırma yeniden oluşturuldu: {name} (VPN + internet çıkışı → yalnızca VPN ağı)",
+      "inet_vpn_ip": "Yapılandırma yeniden oluşturuldu: {name} (VPN + internet çıkışı → yalnızca VPN ağı); IP {old} → {new}",
+      "vpn_inet": "Yapılandırma yeniden oluşturuldu: {name} (yalnızca VPN ağı → VPN + internet çıkışı)",
+      "vpn_inet_ip": "Yapılandırma yeniden oluşturuldu: {name} (yalnızca VPN ağı → VPN + internet çıkışı); IP {old} → {new}",
+      "vpn_vpn": "Yapılandırma yeniden oluşturuldu: {name} (yalnızca VPN ağı → yalnızca VPN ağı)",
+      "vpn_vpn_ip": "Yapılandırma yeniden oluşturuldu: {name} (yalnızca VPN ağı → yalnızca VPN ağı); IP {old} → {new}"
+    },
+    "peer_toggle": {
+      "off": "Cihaz kapatıldı: {name}",
+      "on": "Cihaz açıldı: {name}"
+    },
+    "peer_unfreeze": "Dondurma kaldırıldı: {name}",
+    "policy_create": {
+      "one": "Erişim profili eklendi: {name} ({n} kural)",
+      "other": "Erişim profili eklendi: {name} ({n} kural)"
+    },
+    "policy_delete": "Erişim profili silindi: {name}",
+    "policy_edit": {
+      "one": "Erişim profili güncellendi: {name} ({n} kural)",
+      "other": "Erişim profili güncellendi: {name} ({n} kural)"
+    },
+    "settings": {
+      "change_block_private": "Ayarlar kaydedildi: özel ağ engeli",
+      "change_unprofiled_free": "Ayarlar kaydedildi: profilsiz cihazlar arası erişim",
+      "change_dns": "Ayarlar kaydedildi: DNS",
+      "change_endpoint": "Ayarlar kaydedildi: uç nokta",
+      "change_ipv6_off": "Ayarlar kaydedildi: IPv6 kapatıldı",
+      "change_ipv6_on": "Ayarlar kaydedildi: IPv6 açıldı ({ula})",
+      "change_keepalive": "Ayarlar kaydedildi: keepalive",
+      "change_mtu": "Ayarlar kaydedildi: MTU",
+      "change_port": "Ayarlar kaydedildi: port",
+      "change_update_check": "Ayarlar kaydedildi: güncelleme denetimi",
+      "lang": "Sunucu dili: {lang}",
+      "nochange": "Ayarlar kaydedildi: değişiklik yok"
+    },
+    "start": "Kut başladı (sürüm {version})",
+    "totp_fail": {
+      "disable": "2FA kapatma denemesi başarısız",
+      "enable": "2FA açma denemesi: parola yanlış"
+    },
+    "totp_off": "İki adımlı doğrulama kapatıldı",
+    "totp_off.local": "İki adımlı doğrulama sunucudan (kut 2fa-off) kapatıldı: {name}",
+    "totp_on": "İki adımlı doğrulama açıldı",
+    "user_create": "Hesap eklendi: {name} ({role})",
+    "user_delete": "Hesap silindi: {name}",
+    "user_edit": "Hesap güncellendi: {name}",
+    "user_edit.password": "Hesap güncellendi: {name}; parola sıfırlandı",
+    "user_edit.role": "Hesap güncellendi: {name}; rol: {role}",
+    "user_edit.role_password": "Hesap güncellendi: {name}; rol: {role}; parola sıfırlandı"
+  }
+}

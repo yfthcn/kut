@@ -1,0 +1,34 @@
+{
+  "access": {
+    "all_ports": "tüm portlar",
+    "all_traffic": "tüm trafik",
+    "day": {
+      "0": "Paz",
+      "1": "Pzt",
+      "2": "Sal",
+      "3": "Çar",
+      "4": "Per",
+      "5": "Cum",
+      "6": "Cmt"
+    },
+    "dst_inactive": "Hedef cihaz kapalı ya da dondurulmuş; sunucuda tanımlı değil.",
+    "dst_not_found": "Hedef cihaz bulunamadı.",
+    "every_day": "her gün",
+    "free_between_devices": "Erişim profili yok: VPN içinde cihazlar arası serbest.",
+    "host_decides": "Erişim profili yok: sunucu portlarına sunucunun kendi güvenlik duvarı (ufw) karar verir.",
+    "ip_available": "Bu IP kullanılabilir.",
+    "isolated_between_devices": "Erişim profili yok: bu cihaz yalnızca sunucuya ulaşır. Diğer cihazlara erişim için profil ata.",
+    "matrix_free": "serbest",
+    "matrix_host": "host güvenlik duvarı; panel (tcp/{port}) açık",
+    "panel_open": "Panel portu, erişim profili olmayan cihazlara açık.",
+    "ping": "ping (ICMP)",
+    "ping_open": "Sunucuya ping her zaman açık.",
+    "policy_allows": "“{policy}” profili izin veriyor: {rule}",
+    "policy_allows_reverse": "“{policy}” profili izin veriyor: {rule} (karşılıklı kural)",
+    "policy_missing": "(bulunamadı)",
+    "policy_no_rule": "“{policy}” profilinde bu bağlantıya izin veren kural yok.",
+    "policy_off_window": "“{policy}” profilinde izin var ama şu an zaman aralığının dışında: {rule}",
+    "same_device": "Kaynak ve hedef aynı cihaz.",
+    "src_inactive": "Kaynak cihaz kapalı ya da dondurulmuş; sunucuda tanımlı değil."
+  }
+}

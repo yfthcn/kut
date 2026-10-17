@@ -1,0 +1,19 @@
+{
+  "err": {
+    "fw": {
+      "apply": {
+        "skeleton": "firewall skeleton: {err}",
+        "skeleton_nat": "firewall skeleton (nat): {err}",
+        "restore": "{label}firewall: {err}",
+        "restore_nat": "{label}firewall (nat): {err}"
+      }
+    },
+    "fw6": {
+      "addr": "could not assign the IPv6 address (IPv6 may be disabled on the server): {err}",
+      "accept_ra": "could not set accept_ra ({dev}): {err}",
+      "forwarding": "could not enable IPv6 forwarding: {err}",
+      "no_ip6tables": "ip6tables not found (sudo apt install iptables); IPv6 cannot be enabled",
+      "skeleton": "IPv6 {err}"
+    }
+  }
+}

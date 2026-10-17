@@ -1,0 +1,53 @@
+{
+  "log": {
+    "backup_fail": "Otomatik yedek alınamadı: {msg}",
+    "backup": {
+      "manual": "Elle yedek alındı: {name}",
+      "download": "Yedek indirildi: {name}",
+      "delete": "Yedek silindi: {name}"
+    },
+    "restore": {
+      "file": "Yedekten geri yüklendi: {name} (önceki durum: {pre})",
+      "file_endpoint": "Yedekten geri yüklendi: {name}, uç nokta {endpoint} (önceki durum: {pre})",
+      "upload": "Yedekten geri yüklendi: yüklenen dosya (önceki durum: {pre})",
+      "upload_endpoint": "Yedekten geri yüklendi: yüklenen dosya, uç nokta {endpoint} (önceki durum: {pre})"
+    },
+    "restart": {
+      "panel": "Kut servisi panelden yeniden başlatıldı"
+    },
+    "settings": {
+      "backup_pass_cleared": "Yedek şifreleme kapatıldı",
+      "backup_pass_set": "Yedek şifreleme parolası ayarlandı",
+      "maint_changed": "Yedekleme ve saklama ayarları değişti",
+      "notify_changed": "Bildirim ayarları değişti"
+    },
+    "password_fail": {
+      "backup_owner_pass": "Yedek/geri yükleme işlemi: sahip parolası yanlış",
+      "backup_owner_code": "Yedek/geri yükleme işlemi: doğrulama kodu yanlış"
+    },
+    "peer_offline": "Cihaz 24 saattir bağlanmadı: {name}",
+    "peer_first": "Cihaz ilk kez bağlandı: {name}",
+    "unfreeze_auto": "Dondurma süresi doldu, cihaz geri açıldı: {name}",
+    "peer_expired": "Geçerlilik süresi doldu, cihaz kapatıldı: {name}",
+    "schedule": {
+      "start": "Zamanlama uygulandı — {name}: erişim saati başladı",
+      "end": "Zamanlama uygulandı — {name}: erişim saati bitti"
+    },
+    "rule_schedule": {
+      "start": "Kural zamanı uygulandı — “{policy}” profili, {rule}: izin başladı",
+      "end": "Kural zamanı uygulandı — “{policy}” profili, {rule}: izin bitti"
+    },
+    "firewall": {
+      "repaired": "Güvenlik duvarı kuralları olması gerekene geri getirildi"
+    }
+  },
+  "logexport": {
+    "col": {
+      "time": "zaman",
+      "source": "kaynak",
+      "user": "kullanici",
+      "event": "olay",
+      "text": "aciklama"
+    }
+  }
+}

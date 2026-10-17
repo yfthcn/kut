@@ -1,0 +1,121 @@
+{
+  "cli": {
+    "tagline": "WireGuard management panel",
+    "error_prefix": "error:",
+    "no_service": "Could not connect to the Kut service (is it running? sudo systemctl status kut). {err}",
+    "no_permission": "Permission denied on the Kut socket: run this command with sudo (sudo kut …). {err}",
+    "unknown_command": "unknown command: {cmd}",
+    "did_you_mean": "did you mean: {cmd}?",
+    "usage": "{app} {version} — {tagline}\n\nUsage:\n  kut init   -endpoint <ip|hostname> [-port 51820] [-subnet 10.77.0.0/24] [-iface wg0] [-lang tr|en] [-data DIR] [-dry-run]\n  kut passwd [-data DIR] [-user ACCOUNT]\n  kut serve  [-data DIR] [-listen ADDR:PORT] [-dry-run]\n  kut add    -name NAME [-note NOTE] [-ip IP] [-internet] [-policy PROFILE] [-expires 8h|3d|2w] [-o file.conf]   (adds a device to the running service, prints a QR code)\n  kut list   [-data DIR]                                                              (lists devices)\n  kut doctor [-data DIR] [-json]                                                      (checks the installation; exit code 1 on errors)\n  kut 2fa-off [-data DIR] [-user ACCOUNT]                                                         (turns off panel 2FA; recovery for a lost phone)\n  kut backup  [-data DIR] [-o file.tar.gz] [-encrypt]                                (settings + device backup; contains PRIVATE KEYS; -encrypt protects it with a passphrase)\n  kut restore -f file.tar.gz [-data DIR] [-force] [-endpoint NEW-IP|HOSTNAME]       (restores while the service is stopped; asks for the passphrase if encrypted)\n  kut install [--endpoint X] [--port N] [--subnet CIDR] [--iface NAME] [--device NAME] [--lang tr|en] [--yes]   (installs or upgrades this binary as a service; root)\n  kut uninstall [-purge] [-yes] [-dry-run]                                     (removes Kut; writes an encrypted backup first; -purge also deletes the data)\n  kut version\n\n-dry-run: does not touch wg/iptables, writes the configuration to the data directory. For trying things out locally.\n",
+    "flag": {
+      "usage_of": "Usage of {name}:",
+      "default": "(default: {v})",
+      "data": "data directory",
+      "lang": "output language: tr | en",
+      "add_name": "device name (required)",
+      "add_note": "note",
+      "add_internet": "allow internet access",
+      "add_ip": "VPN IP (automatic if empty)",
+      "add_policy": "access profile name",
+      "add_expires": "guest device: turns off after this time (e.g. 8h, 3d, 2w)",
+      "add_out": "also write the configuration to this file (0600)",
+      "add_no_qr": "do not print a QR code",
+      "doctor_json": "JSON output",
+      "init_endpoint": "the server's public IP or hostname (required)",
+      "init_port": "WireGuard UDP port",
+      "init_subnet": "VPN subnet",
+      "init_iface": "interface name",
+      "init_dry_run": "do not touch the real wg configuration",
+      "init_force": "overwrite an existing /etc/wireguard file",
+      "init_allow_overlap": "continue even if the subnet overlaps a network on this machine",
+      "init_lang": "server default language: tr or en (notifications, the CLI and kut doctor follow it; if omitted, the environment language, otherwise tr)",
+      "passwd_user": "account name (owner: admin if empty)",
+      "serve_listen": "address to listen on (default: <VPN server IP>:5000, 127.0.0.1:5000 in dry-run)",
+      "serve_dry_run": "do not call wg/iptables"
+    },
+    "init": {
+      "bad_lang": "invalid -lang (must be tr or en)",
+      "bad_endpoint": "-endpoint: {err}",
+      "bad_port": "invalid -port",
+      "bad_iface": "invalid -iface",
+      "bad_subnet": "-subnet must be a private IPv4 subnet (inside 10/8, 172.16/12, 192.168/16 or 100.64/10; between /{min} and /{max}, e.g. 10.77.0.0/24)",
+      "subnet_not_network": "-subnet must start at the network address (e.g. {want})",
+      "already": "{data} is already initialised; the keys are kept, nothing was done",
+      "conf_exists": "{conf} already exists; stopping so as not to overwrite an existing VPN (add -force if you really want to)",
+      "overlap": "-subnet {net} overlaps the {local} network on this machine; pick another network (e.g. {example}) or add -allow-overlap if you mean it",
+      "done": "Done.\n  configuration : {conf}\n  data directory: {data}\n  server IP     : {ip}\n  public key    : {key}\n"
+    },
+    "passwd": {
+      "prompt": "New admin password (at least 10 characters): ",
+      "again": "Again: ",
+      "mismatch": "passwords do not match",
+      "saved_live": "Password saved; the account's open sessions were closed.",
+      "saved_restart": "Password saved. Restart the service to close open sessions: sudo systemctl restart kut",
+      "saved": "Password saved."
+    },
+    "add": {
+      "name_required": "-name is required",
+      "policy_missing": "there is no access profile named \"{name}\"",
+      "access_vpn": "VPN network only",
+      "access_inet": "VPN + internet access",
+      "done": "Device added: {name}  {ip}  ({access})",
+      "shown_once": "This configuration is shown only now; the private key is not stored on the server.",
+      "scan": "On your phone: WireGuard app > Add tunnel > Scan QR code.",
+      "config_header": "--- configuration ---",
+      "written": "--- also written to {path} ---"
+    },
+    "list": {
+      "empty": "No devices yet. To add one: kut add -name ALI",
+      "head": {
+        "device": "DEVICE",
+        "ip": "IP",
+        "state": "STATE",
+        "internet": "INTERNET",
+        "profile": "PROFILE",
+        "seen": "LAST SEEN"
+      },
+      "state": {
+        "online": "online",
+        "active": "offline",
+        "disabled": "off",
+        "frozen": "frozen",
+        "expired": "expired",
+        "outside": "off-hours"
+      },
+      "yes": "yes",
+      "no": "no",
+      "never": "never",
+      "now": "now",
+      "ago": "{dur} ago",
+      "guest": "  (guest: turns off in {dur})"
+    },
+    "doctor": {
+      "ok": { "one": "{n} ok", "other": "{n} ok" },
+      "warn": { "one": "{n} warning", "other": "{n} warnings" },
+      "fail": { "one": "{n} error", "other": "{n} errors" }
+    }
+  },
+  "err": {
+    "span": {
+      "invalid": "could not understand the duration: \"{value}\" (e.g. 8h, 3d, 2w)",
+      "too_long": "the duration can be at most 1 year"
+    },
+    "wg": {
+      "bad_private_key": "invalid private key",
+      "conf_write_failed": "could not write the configuration: {err}"
+    },
+    "qr": {
+      "too_long": "data is too long for a QR code"
+    },
+    "store": {
+      "migrate_backup_create": "could not create the migration backup: {err}",
+      "migrate_backup_write": "could not write the migration backup: {err}",
+      "no_server": "could not read the server configuration (run `kut init` first): {err}",
+      "read_failed": "could not read {file}: {err}",
+      "no_admin": "no admin password (run `kut passwd` first): {err}",
+      "newer_schema": "the data directory was created by a newer Kut version (schema {have} > {max}); update Kut first",
+      "invalid_data": "the data in {dir} is invalid, the panel will not start (fix it by hand or restore a valid backup): {err}",
+      "invalid_conf": "the data in {dir} is invalid, the panel will not start: {err}"
+    }
+  }
+}

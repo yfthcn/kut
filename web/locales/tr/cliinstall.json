@@ -1,0 +1,37 @@
+{
+  "cli": {
+    "flag": {
+      "uninstall_purge": "veri dizinini de sil (cihazlar, anahtarlar, hesaplar, günlükler, yedekler)",
+      "uninstall_yes": "onay sorma",
+      "uninstall_dry_run": "yalnızca neyin kaldırılacağını yaz"
+    },
+    "install": {
+      "need_root": "root olarak çalıştır: sudo kut install",
+      "no_bash": "kurulum betiği için bash gerekli: {err}"
+    },
+    "uninstall": {
+      "need_root": "root olarak çalıştır: sudo kut uninstall",
+      "plan_head": "Kut bu sunucudan kaldırılacak:",
+      "step_backup": "{path} dosyasına şifreli yedek yaz",
+      "step_no_backup": "yedek yok ({data} içinde Kut verisi yok)",
+      "step_units": "{units} durdurulup devre dışı bırakılır",
+      "step_firewall": "KUT-* zincirleri ve Kut'un INPUT, FORWARD, nat POSTROUTING atlamaları kaldırılır (IPv4 ve IPv6)",
+      "step_ufw": "Kut kurulumunun eklediği ufw kuralı {port}/udp kaldırılır",
+      "step_no_ufw": "ufw ve Docker kurallarına dokunulmaz (kurulum ufw kuralı eklememiş)",
+      "step_files": "silinecek dosyalar:",
+      "step_reload": "systemctl daemon-reload",
+      "step_purge": "veri dizini {data} silinir",
+      "step_keep": "veri dizini {data} korunur (silmek için -purge)",
+      "forward_note": "net.ipv4.ip_forward bir sonraki yeniden başlatmaya kadar açık kalır (Docker gibi başka servisler ona dayanıyor olabilir).",
+      "dry_run": "Deneme: hiçbir şey değiştirilmedi.",
+      "confirm": "Devam edilsin mi? (e/H)",
+      "aborted": "Vazgeçildi; hiçbir şey değiştirilmedi.",
+      "need_yes": "standart girdi bir terminal değil: onay için -yes ver",
+      "backup_written": "Yedek yazıldı: {path} (şifreli; geri yüklemek için: kut restore -f {path})",
+      "warn": "uyarı: {step}: {err}",
+      "done": "Kut kaldırıldı.",
+      "bad_data": "{data} silinmiyor: -purge, / dışında mutlak yolda bir Kut veri dizini (server.json içeren) ister",
+      "iface_up": "{iface} arayüzü hâlâ açık; Kut'un güvenlik duvarı kuralları yerinde bırakıldı (sökmek trafiğe yol açabilirdi). Çalıştırın: sudo wg-quick down {iface} && sudo kut uninstall"
+    }
+  }
+}

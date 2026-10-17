@@ -1,0 +1,39 @@
+{
+  "reportui": {
+    "title": "Status report",
+    "intro": "How the installation is set up and whether everything is working.",
+    "refresh": "Refresh",
+    "fix": "Fix: {fix}",
+    "structure": "Structure",
+    "matrix_title": "Access matrix",
+    "system": "System",
+    "structure_line": "Internet → {endpoint} (UDP) → {iface} ({ip}) → {devices}",
+    "structure_devices": { "one": "{n} device", "other": "{n} devices" },
+    "counts_ok": "{n} passed",
+    "counts_warn": { "one": "{n} warning", "other": "{n} warnings" },
+    "counts_fail": { "one": "{n} problem", "other": "{n} problems" },
+    "as_of": "as of {date}",
+    "group": {
+      "wireguard": "WireGuard",
+      "firewall": "Firewall",
+      "network": "Network",
+      "security": "Security",
+      "devices": "Devices"
+    },
+    "health": {
+      "ok": "Everything is fine",
+      "warn": "Some things need attention",
+      "fail": "There is a problem to fix"
+    },
+    "matrix": {
+      "empty": "Once you add devices, who can reach whom shows up here.",
+      "corner": "From ↓ / To →",
+      "server": "Server",
+      "legend": "✓ can connect · ✕ cannot connect · ? on server ports the server’s own firewall (ufw) decides. Hover a cell for details.",
+      "allow": "can connect",
+      "deny": "cannot connect",
+      "host": "depends on the server firewall",
+      "self": "itself"
+    }
+  }
+}

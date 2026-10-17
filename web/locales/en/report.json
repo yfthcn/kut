@@ -1,0 +1,273 @@
+{
+  "report": {
+    "skip_dry": "dry-run: this check only runs on a real server.",
+    "data_dir_name": "data directory",
+    "dur": {
+      "days": "{d}d {h}h",
+      "hours": "{h}h {m}m",
+      "mins": "{m}m"
+    },
+    "dest": {
+      "github": "github.com (one version check a day)",
+      "telegram": "api.telegram.org (outgoing notifications only)",
+      "webhook": "{host} (webhook, outgoing notifications only)"
+    },
+    "structure": {
+      "network": "VPN network",
+      "server_addr": "Server address",
+      "endpoint": "Endpoint",
+      "iface": "Interface",
+      "panel": "Panel",
+      "devices": "Devices",
+      "devices_v": "{n} ({active} active)",
+      "internet": "With internet access",
+      "profiles": "Access profiles",
+      "profiles_n": { "one": "{n} profile", "other": "{n} profiles" },
+      "assigned_n": { "one": "assigned to {n} device", "other": "assigned to {n} devices" },
+      "data_format": "Data format",
+      "schema_v": "schema {n}"
+    },
+    "system": {
+      "host": "Host",
+      "os": "Operating system",
+      "kernel": "Kernel",
+      "arch": "Architecture",
+      "panel_uptime": "Panel uptime",
+      "uptime": "System uptime",
+      "data_dir": "Data directory",
+      "conf": "Configuration"
+    },
+    "matrix": {
+      "off": "device is off or frozen"
+    },
+    "check": {
+      "iface": {
+        "skip": { "title": "WireGuard interface" },
+        "ok": { "title": "WireGuard interface is up", "detail": "{iface} is running." },
+        "down": { "title": "WireGuard interface is down", "detail": "Interface {iface} does not exist; devices cannot connect." }
+      },
+      "tool": {
+        "skip": { "title": "wg tool" },
+        "ok": { "title": "wg tool", "detail": "{version}" },
+        "missing": { "title": "wg tool not found", "detail": "wireguard-tools is not installed." }
+      },
+      "port": {
+        "ok": { "title": "Listening on UDP {port}" },
+        "warn": {
+          "title": "Listening port differs from the setting",
+          "detail": "Kernel has {got}, the setting is {port}.",
+          "fix": "Re-apply the configuration from the Server tab; if that does not help, run sudo systemctl restart wg-quick@{iface}"
+        }
+      },
+      "kernel": {
+        "ok": {
+          "title": "Peer count in the kernel is correct",
+          "detail": { "one": "{n} active device is defined in the kernel.", "other": "{n} active devices are defined in the kernel." }
+        },
+        "warn": {
+          "title": "Peer count in the kernel differs from what is expected",
+          "detail": "Expected {want}, the kernel has {got}.",
+          "fix": "Re-apply the configuration from the Server tab."
+        }
+      },
+      "conf": {
+        "ok": { "title": "Configuration file is up to date", "detail": "{path}" },
+        "warn": {
+          "title": "Configuration file differs from what the panel generates",
+          "detail": "{path} may have been edited by hand; re-applying will overwrite it.",
+          "fix": "Re-apply the configuration from the Server tab."
+        },
+        "fail": { "title": "Configuration file could not be read", "detail": "{err}" }
+      },
+      "rules": {
+        "skip": { "title": "Firewall rules" },
+        "ok": {
+          "title": "Firewall rules match what is expected exactly",
+          "detail": "The KUT-PEERS, KUT-IN, KUT-INET and KUT-NAT chains were verified."
+        },
+        "down": { "title": "Firewall could not be checked", "detail": "{detail}" },
+        "out_of_sync": {
+          "title": "Firewall rules are out of sync",
+          "detail": "{detail}. The panel fixes this itself within 15 s.",
+          "fix": "Re-apply the configuration from the Server tab."
+        },
+        "broken": {
+          "title": "Firewall skeleton is broken",
+          "detail": "{detail}",
+          "fix": "Re-apply the configuration from the Server tab; if that does not help, run sudo systemctl restart wg-quick@{iface}"
+        }
+      },
+      "forward": {
+        "skip": { "title": "IP forwarding" },
+        "ok": { "title": "IP forwarding is on", "detail": "Device-to-device and internet traffic can pass through the server." },
+        "off": { "title": "IP forwarding is off", "detail": "net.ipv4.ip_forward=0: devices cannot reach each other or the internet." }
+      },
+      "forward6": {
+        "ok": { "title": "IPv6 forwarding is on", "detail": "IPv6 tunnel network: {prefix}" },
+        "off": {
+          "title": "IPv6 forwarding is off",
+          "detail": "net.ipv6.conf.all.forwarding=0: IPv6 device-to-device and internet traffic cannot pass.",
+          "fix": "Re-apply the configuration from the Server tab."
+        }
+      },
+      "route6": {
+        "ok": { "title": "Server has IPv6 connectivity", "detail": "Devices allowed on the internet reach IPv6 through NAT66." },
+        "none": {
+          "title": "Server has no default IPv6 route",
+          "detail": "IPv6 traffic from devices allowed on the internet is dropped in the tunnel (nothing leaks); IPv4 works normally."
+        }
+      },
+      "backend": {
+        "ok": { "title": "iptables", "detail": "{version}" },
+        "missing": { "title": "iptables not found", "detail": "Firewall rules cannot be applied." }
+      },
+      "ufw": {
+        "skip": { "title": "ufw" },
+        "missing": { "title": "ufw is not installed", "detail": "iptables is the only host firewall." },
+        "unreadable": { "title": "ufw status could not be read" },
+        "inactive": { "title": "ufw is off", "detail": "ufw does not protect the server's public interface." },
+        "ok": { "title": "ufw is on and allows the WireGuard port", "detail": "A rule for {rule} exists." },
+        "closed": {
+          "title": "ufw is on but the WireGuard port may be closed",
+          "detail": "No rule found for {rule}; devices cannot connect."
+        }
+      },
+      "overlap": {
+        "fail": {
+          "title": "VPN network overlaps a local network",
+          "detail": "{net} intersects {local}; routing will break.",
+          "fix": "Pick a new network and reinstall Kut."
+        },
+        "ok": { "title": "VPN network does not overlap local networks", "detail": "{net}" }
+      },
+      "subnet": {
+        "ok": { "title": "VPN subnet is in a private address range", "detail": "{net}" },
+        "warn": {
+          "title": "VPN subnet is not in a private address range",
+          "detail": "{net} is a public address range; traffic to public addresses may be routed into the tunnel.",
+          "fix": "Pick a private network (10/8, 172.16/12, 192.168/16 or 100.64/10) and reinstall Kut."
+        }
+      },
+      "endpoint": {
+        "local": {
+          "title": "Endpoint is a local address",
+          "detail": "{endpoint}: no device can connect from outside.",
+          "fix": "Change the endpoint in the Settings tab."
+        },
+        "private": {
+          "title": "Endpoint is a private address",
+          "detail": "{endpoint}: only devices on the same network can connect. On a real VPS use a public IP or a domain name."
+        },
+        "public": { "title": "Endpoint is a public IP", "detail": "{endpoint}" },
+        "unresolved": {
+          "title": "Endpoint domain name does not resolve",
+          "detail": "{endpoint}: could not be resolved from this server.",
+          "fix": "Check the DNS record."
+        },
+        "resolved": { "title": "Endpoint domain name resolves", "detail": "{endpoint} → {ip}" }
+      },
+      "panel": {
+        "all": {
+          "title": "Panel listens on all interfaces",
+          "detail": "{listen}: may be reachable from the internet.",
+          "fix": "Bind the panel to the VPN IP: kut serve -listen {ip}:5000"
+        },
+        "loopback": {
+          "title": "Panel listens on this machine only",
+          "detail": "{listen}: not reachable over the VPN (fine for dry-run or an SSH tunnel)."
+        },
+        "vpn": { "title": "Panel listens inside the VPN only", "detail": "{listen}" },
+        "other": { "title": "Panel listens on an address outside the VPN", "detail": "{listen}" }
+      },
+      "perms": {
+        "ok": { "title": "Data file permissions are strict", "detail": "Only the owner can read them (the keys are here)." },
+        "warn": { "title": "Some data files are readable by others", "detail": "{list}" }
+      },
+      "update": {
+        "none": { "title": "Kut does not connect to outside addresses", "detail": "Update check and notifications are off." },
+        "some": {
+          "title": "Kut connects only to these addresses",
+          "detail": "{list}. Nothing from outside ever reaches Kut."
+        }
+      },
+      "backup": {
+        "off": {
+          "title": "Automatic backup is off",
+          "detail": "If the server breaks, devices and keys may be lost.",
+          "fix": "Turn it on under Settings → Backup, or take regular backups with sudo kut backup."
+        },
+        "failed": {
+          "title": "The last automatic backup failed",
+          "detail": "{err}",
+          "fix": "Check disk usage and the permissions of {dir}."
+        },
+        "never": { "title": "No automatic backup has run yet", "detail": "The first one runs when its time comes." },
+        "late": {
+          "title": "Automatic backup is overdue",
+          "detail": "Last backup: {time}",
+          "fix": "Make sure Kut is running: sudo systemctl status kut"
+        },
+        "ok": {
+          "title": "Automatic backup is working",
+          "detail": "Last backup: {time} · {dir} (copy it somewhere else too)."
+        }
+      },
+      "private": {
+        "blocked": { "title": "Devices with internet access cannot reach private networks" },
+        "open": {
+          "title": "Devices with internet access can reach private networks",
+          "detail": "The private network block is off in Settings."
+        }
+      },
+      "none": {
+        "info": { "title": "No devices yet", "detail": "Add the first device from the Devices tab." }
+      },
+      "never": {
+        "info": {
+          "title": { "one": "{n} device has never connected", "other": "{n} devices have never connected" },
+          "detail": "{list}"
+        }
+      },
+      "stale": {
+        "info": {
+          "title": { "one": "{n} device has not been seen for over 7 days", "other": "{n} devices have not been seen for over 7 days" },
+          "detail": "{list}",
+          "fix": "If unused, turn it off or delete it."
+        }
+      },
+      "seen": {
+        "ok": { "title": "All devices connected recently" }
+      },
+      "emptypol": {
+        "warn": {
+          "title": "Profile “{name}” has no rules",
+          "detail": {
+            "one": "{n} device uses this profile and cannot reach anything (only ping to the server).",
+            "other": "{n} devices use this profile and cannot reach anything (only ping to the server)."
+          },
+          "fix": "Add rules to the profile."
+        }
+      },
+      "unusedpol": {
+        "info": { "title": "No device uses profile “{name}”" }
+      },
+      "missingpol": {
+        "fail": {
+          "title": "The access profile of device {name} was not found",
+          "detail": "All access was closed to stay on the safe side.",
+          "fix": "Assign a valid profile to the device."
+        }
+      },
+      "nopol": {
+        "info": {
+          "title": { "one": "{n} device has no access profile", "other": "{n} devices have no access profile" },
+          "detail": "{list}: reach only the server; ufw decides access to the server's ports. Give them a profile to open access to other devices."
+        },
+        "free": {
+          "title": { "one": "{n} device has no access profile", "other": "{n} devices have no access profile" },
+          "detail": "{list}: unrestricted inside the VPN (setting “Devices without a profile can reach each other” is on); ufw decides access to the server's ports."
+        }
+      }
+    }
+  }
+}

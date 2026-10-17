@@ -1,0 +1,273 @@
+{
+  "report": {
+    "skip_dry": "dry-run: bu denetim yalnızca gerçek sunucuda yapılır.",
+    "data_dir_name": "veri dizini",
+    "dur": {
+      "days": "{d} gün {h} sa",
+      "hours": "{h} sa {m} dk",
+      "mins": "{m} dk"
+    },
+    "dest": {
+      "github": "github.com (günde bir sürüm sorgusu)",
+      "telegram": "api.telegram.org (yalnızca giden bildirim)",
+      "webhook": "{host} (webhook, yalnızca giden bildirim)"
+    },
+    "structure": {
+      "network": "VPN ağı",
+      "server_addr": "Sunucu adresi",
+      "endpoint": "Uç nokta",
+      "iface": "Arayüz",
+      "panel": "Panel",
+      "devices": "Cihaz",
+      "devices_v": "{n} ({active} aktif)",
+      "internet": "İnternet çıkışlı",
+      "profiles": "Erişim profili",
+      "profiles_n": { "one": "{n} profil", "other": "{n} profil" },
+      "assigned_n": { "one": "{n} cihaza atanmış", "other": "{n} cihaza atanmış" },
+      "data_format": "Veri biçimi",
+      "schema_v": "şema {n}"
+    },
+    "system": {
+      "host": "Ana makine",
+      "os": "İşletim sistemi",
+      "kernel": "Çekirdek",
+      "arch": "Mimari",
+      "panel_uptime": "Panel çalışma süresi",
+      "uptime": "Sistem çalışma süresi",
+      "data_dir": "Veri dizini",
+      "conf": "Yapılandırma"
+    },
+    "matrix": {
+      "off": "cihaz kapalı ya da dondurulmuş"
+    },
+    "check": {
+      "iface": {
+        "skip": { "title": "WireGuard arayüzü" },
+        "ok": { "title": "WireGuard arayüzü açık", "detail": "{iface} çalışıyor." },
+        "down": { "title": "WireGuard arayüzü kapalı", "detail": "{iface} arayüzü yok; cihazlar bağlanamaz." }
+      },
+      "tool": {
+        "skip": { "title": "wg aracı" },
+        "ok": { "title": "wg aracı", "detail": "{version}" },
+        "missing": { "title": "wg aracı bulunamadı", "detail": "wireguard-tools kurulu değil." }
+      },
+      "port": {
+        "ok": { "title": "UDP {port} dinleniyor" },
+        "warn": {
+          "title": "Dinlenen port ayardan farklı",
+          "detail": "Çekirdekte {got}, ayarda {port}.",
+          "fix": "Sunucu sekmesinden yapılandırmayı yeniden uygula; olmazsa sudo systemctl restart wg-quick@{iface}"
+        }
+      },
+      "kernel": {
+        "ok": {
+          "title": "Çekirdekteki peer sayısı doğru",
+          "detail": { "one": "{n} aktif cihaz çekirdekte tanımlı.", "other": "{n} aktif cihaz çekirdekte tanımlı." }
+        },
+        "warn": {
+          "title": "Çekirdekteki peer sayısı beklenenden farklı",
+          "detail": "Beklenen {want}, çekirdekte {got}.",
+          "fix": "Sunucu sekmesinden yapılandırmayı yeniden uygula."
+        }
+      },
+      "conf": {
+        "ok": { "title": "Yapılandırma dosyası güncel", "detail": "{path}" },
+        "warn": {
+          "title": "Yapılandırma dosyası panelin ürettiğinden farklı",
+          "detail": "{path} elle değiştirilmiş olabilir; yeniden uygulayınca ezilir.",
+          "fix": "Sunucu sekmesinden yapılandırmayı yeniden uygula."
+        },
+        "fail": { "title": "Yapılandırma dosyası okunamadı", "detail": "{err}" }
+      },
+      "rules": {
+        "skip": { "title": "Güvenlik duvarı kuralları" },
+        "ok": {
+          "title": "Güvenlik duvarı kuralları olması gerekenle birebir aynı",
+          "detail": "KUT-PEERS, KUT-IN, KUT-INET ve KUT-NAT zincirleri doğrulandı."
+        },
+        "down": { "title": "Güvenlik duvarı denetlenemedi", "detail": "{detail}" },
+        "out_of_sync": {
+          "title": "Güvenlik duvarı kuralları uyuşmuyor",
+          "detail": "{detail}. Panel 15 sn içinde kendisi düzeltir.",
+          "fix": "Sunucu sekmesinden yapılandırmayı yeniden uygula."
+        },
+        "broken": {
+          "title": "Güvenlik duvarı iskeleti bozuk",
+          "detail": "{detail}",
+          "fix": "Sunucu sekmesinden yapılandırmayı yeniden uygula; olmazsa sudo systemctl restart wg-quick@{iface}"
+        }
+      },
+      "forward": {
+        "skip": { "title": "IP yönlendirme" },
+        "ok": { "title": "IP yönlendirme açık", "detail": "Cihazlar arası ve internet trafiği sunucudan geçebilir." },
+        "off": { "title": "IP yönlendirme kapalı", "detail": "net.ipv4.ip_forward=0: cihazlar birbirine ve internete ulaşamaz." }
+      },
+      "forward6": {
+        "ok": { "title": "IPv6 yönlendirme açık", "detail": "IPv6 tünel ağı: {prefix}" },
+        "off": {
+          "title": "IPv6 yönlendirme kapalı",
+          "detail": "net.ipv6.conf.all.forwarding=0: IPv6 cihazlar arası/internet trafiği geçemez.",
+          "fix": "Sunucu sekmesinden yapılandırmayı yeniden uygula."
+        }
+      },
+      "route6": {
+        "ok": { "title": "Sunucunun IPv6 çıkışı var", "detail": "İnternet izinli cihazlar IPv6'ya NAT66 ile çıkar." },
+        "none": {
+          "title": "Sunucunun IPv6 varsayılan rotası yok",
+          "detail": "İnternet izinli cihazların IPv6 trafiği tünelde kesilir (sızıntı olmaz); IPv4 normal çalışır."
+        }
+      },
+      "backend": {
+        "ok": { "title": "iptables", "detail": "{version}" },
+        "missing": { "title": "iptables bulunamadı", "detail": "Güvenlik duvarı kuralları uygulanamaz." }
+      },
+      "ufw": {
+        "skip": { "title": "ufw" },
+        "missing": { "title": "ufw kurulu değil", "detail": "Host güvenlik duvarı olarak yalnızca iptables var." },
+        "unreadable": { "title": "ufw durumu okunamadı" },
+        "inactive": { "title": "ufw kapalı", "detail": "Sunucunun public arayüzünü ufw korumuyor." },
+        "ok": { "title": "ufw açık ve WireGuard portuna izin veriyor", "detail": "{rule} kuralı var." },
+        "closed": {
+          "title": "ufw açık ama WireGuard portu kapalı olabilir",
+          "detail": "{rule} için kural bulunamadı; cihazlar bağlanamaz."
+        }
+      },
+      "overlap": {
+        "fail": {
+          "title": "VPN ağı yerel bir ağla çakışıyor",
+          "detail": "{net} ile {local} kesişiyor; yönlendirme bozulur.",
+          "fix": "Yeni bir ağ seçip Kut'u yeniden kur."
+        },
+        "ok": { "title": "VPN ağı yerel ağlarla çakışmıyor", "detail": "{net}" }
+      },
+      "subnet": {
+        "ok": { "title": "VPN alt ağı özel adres aralığında", "detail": "{net}" },
+        "warn": {
+          "title": "VPN alt ağı özel adres aralığında değil",
+          "detail": "{net} genel bir adres aralığı; genel adreslere giden trafik tünele yönlenebilir.",
+          "fix": "Özel bir ağ (10/8, 172.16/12, 192.168/16 ya da 100.64/10) seçip Kut'u yeniden kur."
+        }
+      },
+      "endpoint": {
+        "local": {
+          "title": "Uç nokta yerel bir adres",
+          "detail": "{endpoint}: dışarıdan hiçbir cihaz bağlanamaz.",
+          "fix": "Ayarlar sekmesinden uç noktayı değiştir."
+        },
+        "private": {
+          "title": "Uç nokta özel bir adres",
+          "detail": "{endpoint}: yalnızca aynı ağdaki cihazlar bağlanabilir. Gerçek VPS'te genel IP ya da alan adı kullan."
+        },
+        "public": { "title": "Uç nokta genel bir IP", "detail": "{endpoint}" },
+        "unresolved": {
+          "title": "Uç nokta alan adı çözülemiyor",
+          "detail": "{endpoint}: bu sunucudan çözümlenemedi.",
+          "fix": "DNS kaydını kontrol et."
+        },
+        "resolved": { "title": "Uç nokta alan adı çözülüyor", "detail": "{endpoint} → {ip}" }
+      },
+      "panel": {
+        "all": {
+          "title": "Panel tüm arayüzlerde dinliyor",
+          "detail": "{listen}: internetten erişilebilir olabilir.",
+          "fix": "Panel adresini VPN IP'sine bağla: kut serve -listen {ip}:5000"
+        },
+        "loopback": {
+          "title": "Panel yalnızca bu makinede dinliyor",
+          "detail": "{listen}: VPN üzerinden erişilemez (dry-run ya da SSH tüneli için)."
+        },
+        "vpn": { "title": "Panel yalnızca VPN içinde dinliyor", "detail": "{listen}" },
+        "other": { "title": "Panel VPN dışı bir adreste dinliyor", "detail": "{listen}" }
+      },
+      "perms": {
+        "ok": { "title": "Veri dosyalarının izinleri sıkı", "detail": "Yalnızca sahibi okuyabilir (anahtarlar burada)." },
+        "warn": { "title": "Bazı veri dosyaları başkaları tarafından okunabilir", "detail": "{list}" }
+      },
+      "update": {
+        "none": { "title": "Kut dış adreslere bağlanmıyor", "detail": "Güncelleme denetimi ve bildirimler kapalı." },
+        "some": {
+          "title": "Kut yalnızca şu adreslere bağlanıyor",
+          "detail": "{list}. Dışarıdan Kut'a hiçbir şey gelmez."
+        }
+      },
+      "backup": {
+        "off": {
+          "title": "Otomatik yedek kapalı",
+          "detail": "Sunucu bozulursa cihazlar ve anahtarlar kaybolabilir.",
+          "fix": "Ayarlar → Yedekleme'den aç ya da düzenli sudo kut backup al."
+        },
+        "failed": {
+          "title": "Son otomatik yedek başarısız",
+          "detail": "{err}",
+          "fix": "Disk doluluğunu ve {dir} izinlerini kontrol et."
+        },
+        "never": { "title": "Otomatik yedek henüz alınmadı", "detail": "İlk yedek zamanı gelince alınır." },
+        "late": {
+          "title": "Otomatik yedek gecikmiş",
+          "detail": "Son yedek: {time}",
+          "fix": "Kut'un çalıştığından emin ol: sudo systemctl status kut"
+        },
+        "ok": {
+          "title": "Otomatik yedek çalışıyor",
+          "detail": "Son yedek: {time} · {dir} (başka bir yere de kopyala)."
+        }
+      },
+      "private": {
+        "blocked": { "title": "İnternet çıkışlı cihazlar özel ağlara erişemiyor" },
+        "open": {
+          "title": "İnternet çıkışlı cihazlar özel ağlara erişebilir",
+          "detail": "Ayarlar'da özel ağ engeli kapalı."
+        }
+      },
+      "none": {
+        "info": { "title": "Henüz cihaz yok", "detail": "Cihazlar sekmesinden ilk cihazı ekle." }
+      },
+      "never": {
+        "info": {
+          "title": { "one": "{n} cihaz henüz hiç bağlanmadı", "other": "{n} cihaz henüz hiç bağlanmadı" },
+          "detail": "{list}"
+        }
+      },
+      "stale": {
+        "info": {
+          "title": { "one": "{n} cihaz 7 günden uzun süredir görünmedi", "other": "{n} cihaz 7 günden uzun süredir görünmedi" },
+          "detail": "{list}",
+          "fix": "Kullanılmıyorsa kapat ya da sil."
+        }
+      },
+      "seen": {
+        "ok": { "title": "Tüm cihazlar yakın zamanda bağlanmış" }
+      },
+      "emptypol": {
+        "warn": {
+          "title": "“{name}” profilinde kural yok",
+          "detail": {
+            "one": "{n} cihaz bu profili kullanıyor ve hiçbir yere erişemiyor (yalnızca sunucuya ping).",
+            "other": "{n} cihaz bu profili kullanıyor ve hiçbir yere erişemiyor (yalnızca sunucuya ping)."
+          },
+          "fix": "Profile kural ekle."
+        }
+      },
+      "unusedpol": {
+        "info": { "title": "“{name}” profilini kullanan cihaz yok" }
+      },
+      "missingpol": {
+        "fail": {
+          "title": "{name} cihazının erişim profili bulunamadı",
+          "detail": "Güvenli tarafta kalınıp tüm erişim kapatıldı.",
+          "fix": "Cihaza geçerli bir profil ata."
+        }
+      },
+      "nopol": {
+        "info": {
+          "title": { "one": "{n} cihazın erişim profili yok", "other": "{n} cihazın erişim profili yok" },
+          "detail": "{list}: yalnızca sunucuya ulaşır, sunucu portlarına ufw karar verir. Diğer cihazlara erişim için profil ata."
+        },
+        "free": {
+          "title": { "one": "{n} cihazın erişim profili yok", "other": "{n} cihazın erişim profili yok" },
+          "detail": "{list}: VPN içinde serbest (“Profili olmayan cihazlar birbirine erişebilsin” ayarı açık), sunucu portlarına ufw karar verir."
+        }
+      }
+    }
+  }
+}

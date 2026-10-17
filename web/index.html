@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0d151b">
+<title>Kut</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/css/app.css">
+<script src="/js/theme.js"></script>
+<script type="module" src="/js/main.js"></script>
+</head>
+<body>
+
+<main id="login" class="login" hidden>
+  <form id="login-form" class="login-card">
+    <svg class="mark big" aria-hidden="true"><use href="/img/kut-mark.svg#mark"/></svg>
+    <div class="login-title">
+      <h1>Kut</h1>
+      <p class="muted" data-i18n="login.subtitle"></p>
+    </div>
+    <label><span data-i18n="login.username"></span>
+      <input id="user" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" value="admin">
+    </label>
+    <label><span data-i18n="login.password"></span>
+      <input id="pw" type="password" autocomplete="current-password" required>
+    </label>
+    <label id="code-row" hidden><span data-i18n="login.code"></span>
+      <input id="code" type="text" inputmode="text" autocomplete="one-time-code" maxlength="24" spellcheck="false" data-i18n-attr="placeholder:login.code_hint">
+    </label>
+    <button class="btn primary block" type="submit" data-i18n="login.submit"></button>
+    <label class="lang-pick"><span class="sr-only" data-i18n="lang.label"></span>
+      <select id="lang-login" class="lang-select sm"></select>
+    </label>
+    <p id="login-err" class="err" role="alert"></p>
+  </form>
+</main>
+
+<div id="app" class="shell" hidden>
+  <aside class="side">
+    <div class="brand">
+      <svg class="mark" aria-hidden="true"><use href="/img/kut-mark.svg#mark"/></svg>
+      <div><b>Kut</b><span id="brand-sub" class="muted"></span></div>
+    </div>
+    <nav id="nav" class="nav" data-i18n-attr="aria-label:nav.sections"></nav>
+    <div class="side-foot">
+      <div class="side-who"><span id="who" class="who"></span><span id="chip" class="chip"></span></div>
+      <div class="row">
+        <button id="theme" class="btn ghost sm icon-btn" type="button" aria-pressed="false"></button>
+        <select id="lang-side" class="lang-select sm grow" data-i18n-attr="aria-label:lang.label"></select>
+        <button id="logout" class="btn ghost sm" type="button" data-i18n="common.logout"></button>
+      </div>
+    </div>
+  </aside>
+
+  <header class="topbar">
+    <div class="brand">
+      <svg class="mark" aria-hidden="true"><use href="/img/kut-mark.svg#mark"/></svg>
+      <h1 id="page-title">Kut</h1>
+    </div>
+    <span id="chip-m" class="chip"></span>
+  </header>
+
+  <main id="view" class="view" tabindex="-1"></main>
+
+  <nav id="bottom" class="bottom" data-i18n-attr="aria-label:nav.main_sections"></nav>
+</div>
+
+<div id="toasts" class="toasts" aria-live="polite"></div>
+</body>
+</html>

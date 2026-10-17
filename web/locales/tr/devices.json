@@ -1,0 +1,246 @@
+{
+  "devices": {
+    "title": "Cihazlar",
+    "subtitle": "VPN’e bağlanan telefon, bilgisayar ve sunucular.",
+    "summary": {
+      "one": "{n} cihazdan {online} tanesi şu an çevrimiçi.",
+      "other": "{n} cihazdan {online} tanesi şu an çevrimiçi."
+    },
+    "add": "Cihaz ekle",
+    "add_first": "İlk cihazı ekle",
+    "empty_title": "Henüz cihaz yok",
+    "empty_text": "İlk cihazı ekle; QR kodu telefondaki WireGuard uygulamasıyla okut.",
+    "filter_label": "Gruba göre süz",
+    "filter_all": "Tümü",
+    "state": {
+      "online": "Çevrimiçi",
+      "offline": "Çevrimdışı",
+      "frozen": "Dondurulmuş",
+      "disabled": "Kapalı",
+      "expired": "Süresi doldu",
+      "outside": "Saat dışı",
+      "frozen_for": "Dondurulmuş · {left} kaldı"
+    },
+    "dur": {
+      "none": "Süresiz",
+      "make_none": "Süresiz yap",
+      "h1": "1 saat",
+      "h6": "6 saat",
+      "h8": "8 saat",
+      "d1": "1 gün",
+      "d3": "3 gün",
+      "d7": "7 gün",
+      "d30": "30 gün"
+    },
+    "field": {
+      "name": "Cihaz adı",
+      "note": "Not",
+      "ip": "VPN IP adresi",
+      "policy": "Erişim profili",
+      "group": "Grup",
+      "group_ph": "isteğe bağlı (ör. Aile)",
+      "validity": "Geçerlilik",
+      "validity_now": "Geçerlilik (şimdiden başlar)",
+      "internet": "İnternet çıkışı"
+    },
+    "policy": {
+      "none": "Profil yok (yalnızca sunucu)",
+      "none_free": "Profil yok (VPN içinde serbest)"
+    },
+    "sched": {
+      "label": "Erişim saatleri",
+      "always": "Her zaman",
+      "tunnel": "Yalnızca bu saatlerde bağlanabilsin",
+      "internet": "Yalnızca bu saatlerde internete çıkabilsin",
+      "start": "Başlangıç",
+      "end": "Bitiş",
+      "hint": "Bitiş başlangıçtan önceyse gece yarısını aşar (22:00–06:00 gibi). Saatler sunucunun yerel saatidir.",
+      "hint_tz": "Bitiş başlangıçtan önceyse gece yarısını aşar (22:00–06:00 gibi). Saatler sunucunun yerel saatidir ({tz})."
+    },
+    "add_dlg": {
+      "title": "Yeni cihaz",
+      "submit": "Cihazı ekle",
+      "name_ph": "ör. Ayşe telefonu",
+      "note_ph": "isteğe bağlı",
+      "ip_auto": "otomatik",
+      "ip_auto_ph": "otomatik: {ip}",
+      "ip_hint": "Boş bırakırsan ilk boş IP verilir.",
+      "guest_hint": "Misafir için süre ver: dolunca cihaz kendiliğinden kapanır, silinmez.",
+      "internet_hint": "Açıksa cihazın tüm interneti bu sunucudan geçer (config buna göre üretilir ve sunucu izin verir). Kapalıysa yalnızca VPN ağı kullanılır."
+    },
+    "edit_dlg": {
+      "title": "Cihazı düzenle · {name}",
+      "save": "Kaydet",
+      "keep_expired": "Süresi doldu (değiştirme)",
+      "keep_left": "Kalan süreyi koru ({left})",
+      "keep_none": "Değiştirme (süresiz)",
+      "policy_hint": "Profil değişikliği anında güvenlik duvarına uygulanır; cihazın config’ini yenilemek gerekmez."
+    },
+    "regen": {
+      "title": "Yeniden oluştur · {name}",
+      "submit": "Yeni anahtar üret",
+      "intro_a": "Cihaza yeni bir anahtar üretilir. ",
+      "intro_b": "Eski config çalışmaz",
+      "intro_c": "; kişi yenisini kurmalı.",
+      "internet_hint": "Yeni config tüm interneti tünele yönlendirir ve sunucudaki izin de buna göre ayarlanır. Yalnızca sunucu iznini değiştirmek için kartta İnternet çıkışı izni anahtarını kullan."
+    },
+    "qr": {
+      "title": "QR kodu · {name}",
+      "text": "Bu cihazın QR kodu eklendiği anda bir kez gösterildi. Kut özel anahtarı saklamadığı için aynı kodu yeniden üretemez.",
+      "hint": "Yeni bir QR için cihaza yeni anahtar üret. Eski yapılandırma o anda çalışmaz olur; kişi yenisini okutmalı.",
+      "new_key": "Yeni anahtar üret…"
+    },
+    "config": {
+      "title": "Cihaz yapılandırması",
+      "added": "Cihaz eklendi",
+      "new": "Yeni yapılandırma",
+      "format": "Yapılandırma biçimi",
+      "tab_qr": "QR kodu",
+      "tab_text": "Metin",
+      "no_qr": "QR üretilemedi; .conf dosyasını kullan.",
+      "step1": "Telefonda WireGuard uygulamasını aç.",
+      "step2": "+ düğmesine dokun, “QR kodundan oluştur”u seç.",
+      "step3": "Bu kodu okut ve tüneli aç.",
+      "touch_hint": "Bu cihazın kendisine kuracaksan QR okutamazsın: .conf dosyasını indir ve WireGuard’da “Dosyadan içe aktar”ı seç.",
+      "vpn_inet": "VPN + internet çıkışı",
+      "vpn_only": "yalnızca VPN ağı",
+      "notice": "Bu yapılandırma yalnızca şimdi gösterilir. Özel anahtar sunucuda saklanmaz; kaybolursa “Yeniden oluştur” gerekir.",
+      "save_qr": "QR’ı kaydet",
+      "copy": "Kopyala",
+      "download_conf": ".conf indir",
+      "copied": "Yapılandırma kopyalandı",
+      "copy_failed": "Kopyalanamadı; metni elle seç."
+    },
+    "freeze": {
+      "title": "Dondur · {name}",
+      "text": "Süre dolunca cihaz kendiliğinden geri gelir.",
+      "custom": "Özel süre (dakika)",
+      "minutes_ph": "dakika",
+      "submit": "Dondur"
+    },
+    "inet": {
+      "title": "İnternet çıkışı izni",
+      "use_off": "Kapalı: sunucu internet trafiğini iletmez.",
+      "use_idle": "İzinli, ama bu cihaz tünelden internete henüz trafik göndermedi (yalnızca VPN ağını kullanıyor olabilir).",
+      "use_active": "İzinli ve kullanılıyor: {bytes} iletildi, son trafik {ago}.",
+      "use_stale": "İzinli, kullanılmıyor: son internet trafiği {ago}.",
+      "allow_title": "İnternet çıkışına izin ver",
+      "block_title": "İnternet çıkışını kapat",
+      "allow_text": "Sunucu “{name}” cihazının internet trafiğini iletmeye başlar. Bu tek başına yetmez: cihazın config’i tüm interneti tünele yönlendirmiyorsa trafik yine kendi hattından çıkar. Tüm interneti tünelden geçirmek için “Yeniden oluştur” ile yeni config al.",
+      "block_text": "Sunucu bu cihazın internet trafiğini hemen keser. Cihazın config’i tüm interneti tünele yönlendiriyorsa cihaz internete çıkamaz; yalnızca VPN ağı çalışır. Config’i yeniden oluşturana kadar böyle kalır.",
+      "allow": "İzin ver",
+      "block": "Kapat",
+      "allowed": "İnternet çıkışına izin verildi",
+      "blocked": "İnternet çıkışı kapatıldı"
+    },
+    "bulk": {
+      "apply": "Uygula",
+      "done": {
+        "one": "{msg} ({n} cihaz)",
+        "other": "{msg} ({n} cihaz)"
+      },
+      "selected_n": {
+        "one": "{n} cihaz seçili.",
+        "other": "{n} cihaz seçili."
+      },
+      "selected_short": "{n} seçili",
+      "select_all": "Tümünü seç",
+      "enable": "Aç",
+      "disable": "Kapat",
+      "unfreeze": "Çöz",
+      "policy": "Profil",
+      "policy_title": "Erişim profili ata",
+      "policy_done": "Profil atandı",
+      "internet": "İnternet izni",
+      "internet_title": "İnternet çıkışı izni",
+      "internet_done": "İnternet izni güncellendi",
+      "server_permission": "Sunucu izni",
+      "duration": "Süre",
+      "validity": "Geçerlilik",
+      "validity_label": "Süre (şimdiden başlar)",
+      "validity_done": "Geçerlilik güncellendi",
+      "hours": "Saatler",
+      "hours_done": "Erişim saatleri güncellendi",
+      "group_title": "Grup ata",
+      "group_done": "Grup güncellendi",
+      "delete": "Sil",
+      "delete_title": "Seçilenleri sil",
+      "delete_text": {
+        "one": "{n} cihaz kalıcı olarak silinsin mi? Bağlantıları hemen kesilir ve ilgili profil kuralları temizlenir.",
+        "other": "{n} cihaz kalıcı olarak silinsin mi? Bağlantıları hemen kesilir ve ilgili profil kuralları temizlenir."
+      },
+      "clear": "Seçimi bırak"
+    },
+    "toast": {
+      "saved": "Kaydedildi",
+      "frozen": "Donduruldu",
+      "unfrozen": "Çözüldü",
+      "enabled": "Açıldı",
+      "disabled": "Kapatıldı",
+      "deleted": "Silindi"
+    },
+    "traffic": {
+      "title": "Trafik · {name}",
+      "range": "Aralık",
+      "rates_note": "(indirme / yükleme, cihaz açısından)",
+      "hint": "Geçmiş diske kaydedilir (10 dakikada bir ve kapanırken); servis yeniden başlasa da silinmez. Uzun aralıklar seyrek örneklenir."
+    },
+    "delete": {
+      "title": "Cihazı sil",
+      "text": "“{name}” kalıcı olarak silinsin mi? Bu cihazın bağlantısı hemen kesilir ve ona ait profil kuralları temizlenir."
+    },
+    "tag": {
+      "inet_on": "internet izinli",
+      "inet_off": "yalnızca VPN",
+      "inet_on_title": "Sunucu bu cihazın internet trafiğini iletir",
+      "inet_off_title": "Sunucu bu cihazın internet trafiğini iletmez",
+      "no_policy": "profil yok",
+      "policy_group": "{name} · grup",
+      "group_policy_title": "Grubun varsayılan profili",
+      "sched_internet": "internet {from}–{to}",
+      "sched_tunnel": "bağlantı {from}–{to}",
+      "sched_off": "{label} · şu an kapalı",
+      "sched_title": "Erişim saatleri (sunucu saati)",
+      "guest": "misafir · {left} kaldı",
+      "guest_title": "Misafir cihaz: süre dolunca kendiliğinden kapanır"
+    },
+    "card": {
+      "turn_on": "Cihazı aç",
+      "turn_off": "Cihazı kapat",
+      "handshake": "el sıkışma {ago}",
+      "no_handshake": "henüz bağlanmadı",
+      "rx_cap": "cihazdan alınan",
+      "tx_cap": "cihaza gönderilen",
+      "details": "Ayrıntılar ve internet izni",
+      "endpoint": "Uç nokta",
+      "last_seen": "Son görülme",
+      "added": "Eklendi",
+      "qr": "QR",
+      "traffic": "Trafik",
+      "edit": "Düzenle",
+      "freeze": "Dondur…",
+      "unfreeze": "Dondurmayı çöz",
+      "regen": "Yeniden oluştur…",
+      "delete": "Sil…"
+    },
+    "aria": {
+      "qr": "{name} için WireGuard QR kodu",
+      "inet": "{name} internet çıkışı izni",
+      "toggle": "{name} açık/kapalı",
+      "pick": "{name} seç",
+      "card": "{name}, {state}",
+      "more": "{name} için diğer işlemler",
+      "select_all": "Görünen tüm cihazları seç"
+    }
+  },
+  "kind": {
+    "label": "Cihaz türü",
+    "phone": "Telefon",
+    "tablet": "Tablet",
+    "laptop": "Laptop",
+    "desktop": "Masaüstü",
+    "tv": "TV",
+    "server": "Sunucu / NAS",
+    "other": "Diğer"
+  }
+}

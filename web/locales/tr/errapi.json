@@ -1,0 +1,170 @@
+{
+  "err": {
+    "account": {
+      "admin_unreadable": "yönetici kaydı okunamadı: {msg}",
+      "no_such": "{name} adında hesap yok",
+      "not_found": "Hesap bulunamadı.",
+      "users_unreadable": "users.json okunamadı: {msg}"
+    },
+    "apply": {
+      "failed": "Uygulanamadı: {msg}",
+      "not_saved": "Uygulandı ama kaydedilemedi: {msg}"
+    },
+    "auth": {
+      "admin_required": "Bu işlem için yönetici hesabı gerekir.",
+      "owner_required": "Bu işlem yalnızca sahip hesaba (admin) açık."
+    },
+    "bulk": {
+      "bad_action": "Bilinmeyen işlem.",
+      "none_selected": "En az bir cihaz seç.",
+      "not_found": "Seçilen cihazlardan biri bulunamadı. Sayfayı yenile."
+    },
+    "crypt": {
+      "bad_format": "şifreli yedek biçimi geçersiz",
+      "bad_header": "şifreli yedek başlığı geçersiz",
+      "bad_pass": "Parola yanlış ya da dosya bozuk.",
+      "need_pass": "Bu yedek parolayla şifrelenmiş; parolayı yaz.",
+      "pass_length": "Yedek parolası {min}-{max} karakter olmalı ve satır sonu içermemeli."
+    },
+    "ip": {
+      "in_use": "{ip} zaten “{name}” cihazında kullanılıyor",
+      "is_broadcast": "bu adres ağın yayın (broadcast) adresi, cihaza verilemez",
+      "is_network": "bu adres ağın kendisi, cihaza verilemez",
+      "is_server": "bu adres sunucuya ayrılmış",
+      "not_ipv4": "IP geçerli bir IPv4 adresi olmalı (örn. {example})",
+      "outside": "IP, VPN ağının ({subnet}) içinde olmalı",
+      "pool_full": "alt ağda boş IP kalmadı"
+    },
+    "password": {
+      "local_channel": "Yerel kanaldan parola değiştirilemez; `kut passwd` kullan.",
+      "save_failed": "Parola kaydedilemedi: {msg}",
+      "too_short": "Yeni parola en az {min} karakter olmalı.",
+      "wrong_current": "Mevcut parola yanlış."
+    },
+    "peer": {
+      "bad_freeze_time": "Süre 1 dakika ile 90 gün arasında olmalı.",
+      "bad_group": "Grup adı 1-32 karakter olmalı (harf, rakam, boşluk, . _ -).",
+      "bad_kind": "Bilinmeyen cihaz türü.",
+      "bad_name": "İsim 1-32 karakter olmalı (harf, rakam, boşluk, . _ -).",
+      "bad_note": "Not en fazla {limit} karakter olabilir ve satır sonu içeremez.",
+      "expiry_too_long": "Geçerlilik süresi en fazla 1 yıl olabilir.",
+      "freeze_disabled": "Kapalı cihaz dondurulamaz; önce aç.",
+      "key_failed": "Anahtar üretilemedi: {msg}",
+      "name_taken": "Bu isimde bir cihaz zaten var.",
+      "not_found": "Cihaz bulunamadı."
+    },
+    "policy": {
+      "bad_group": "geçersiz grup adı: {group}",
+      "bad_name": "Profil adı 1-32 karakter olmalı (harf, rakam, boşluk, . _ -).",
+      "desc_invalid": "açıklama: en fazla {limit} karakter olabilir ve satır sonu içeremez",
+      "group_claimed": "“{group}” grubu zaten “{policy}” profilinin varsayılanı",
+      "in_use": {
+        "one": "{n} cihaz bu profili kullanıyor ({devices}). Önce onları başka bir profile ata ya da profili kaldır.",
+        "other": "{n} cihaz bu profili kullanıyor ({devices}). Önce onları başka bir profile ata ya da profili kaldır."
+      },
+      "name_taken": "Bu isimde bir erişim profili zaten var.",
+      "not_found": "Erişim profili bulunamadı.",
+      "too_many_groups": "en fazla {max} grup seçilebilir",
+      "too_many_rules": "en fazla {max} kural eklenebilir"
+    },
+    "reach": {
+      "bad_port": "Port 1-65535 arasında olmalı.",
+      "bad_proto": "Protokol tcp, udp ya da icmp olmalı.",
+      "src_not_found": "Kaynak cihaz bulunamadı."
+    },
+    "rule": {
+      "bad_proto": "kural {n}: protokol tcp, udp, icmp ya da any olmalı",
+      "bad_target": "kural {n}: hedef sunucu, cihaz ya da tüm cihazlar olmalı",
+      "both_single": "kural {n}: \"karşılıklı\" yalnızca tek bir cihaz hedefiyle kullanılır",
+      "device_missing": "kural {n}: kuraldaki cihaz bulunamadı",
+      "device_only": "kural {n}: cihaz yalnızca hedef \"cihaz\" iken seçilir",
+      "note_invalid": "kural {n}: kural açıklaması: en fazla {limit} karakter olabilir ve satır sonu içeremez",
+      "port_bad": "kural {n}: geçersiz port: {port} (1-65535, aralık için 8000-8100)",
+      "port_empty_item": "kural {n}: port listesinde boş eleman var",
+      "port_too_many": "kural {n}: en fazla {max} port ya da aralık yazılabilir",
+      "ports_tcp_udp_only": "kural {n}: port yalnızca TCP ya da UDP için yazılabilir",
+      "schedule_bad_day": "kural {n}: kural zamanı: Gün 0 (Pazar) ile 6 (Cumartesi) arasında olmalı.",
+      "schedule_bad_scope": "kural {n}: kural zamanı: Kapsam 'tunnel' ya da 'internet' olmalı.",
+      "schedule_bad_time": "kural {n}: kural zamanı: Saatler SS:DD biçiminde olmalı (ör. 08:00).",
+      "schedule_no_days": "kural {n}: kural zamanı: En az bir gün seç.",
+      "schedule_same_time": "kural {n}: kural zamanı: Başlangıç ve bitiş saati aynı olamaz."
+    },
+    "schedule": {
+      "bad_day": "Gün 0 (Pazar) ile 6 (Cumartesi) arasında olmalı.",
+      "bad_scope": "Kapsam 'tunnel' ya da 'internet' olmalı.",
+      "bad_time": "Saatler SS:DD biçiminde olmalı (ör. 08:00).",
+      "no_days": "En az bir gün seç.",
+      "same_time": "Başlangıç ve bitiş saati aynı olamaz."
+    },
+    "settings": {
+      "bad_keepalive": "Keepalive 0 ile 120 saniye arasında olmalı.",
+      "bad_mtu": "MTU 0 (varsayılan) ya da 1280-1500 arasında olmalı.",
+      "bad_port": "Port 1 ile 65535 arasında olmalı.",
+      "dns_invalid": "DNS adresi geçersiz: {dns}",
+      "dns_too_many": "en fazla {max} DNS adresi girilebilir",
+      "endpoint_empty": "uç nokta boş olamaz (örn. 203.0.113.10 ya da vpn.ornek.com)",
+      "endpoint_invalid": "uç nokta geçerli bir IP ya da alan adı olmalı",
+      "endpoint_port": "uç noktaya port ekleme; portu ayrı alana yaz",
+      "endpoint_zone": "uç noktada IPv6 bölgesi (%…) olamaz",
+      "need_ip6tables": "IPv6 için ip6tables gerekir (sudo apt install iptables).",
+      "ula_failed": "IPv6 öneki üretilemedi."
+    },
+    "stream": {
+      "too_many": "Çok fazla açık canlı bağlantı.",
+      "unsupported": "Akış desteklenmiyor."
+    },
+    "totp": {
+      "already_off": "İki adımlı doğrulama zaten kapalı.",
+      "already_on": "İki adımlı doğrulama zaten açık.",
+      "already_on_setup": "İki adımlı doğrulama zaten açık. Yeniden kurmak için önce kapat.",
+      "bad_code": "Kod yanlış. Uygulamadaki güncel 6 haneli kodu gir.",
+      "bad_password_or_code": "Parola ya da kod yanlış.",
+      "key_failed": "Anahtar üretilemedi.",
+      "panel_only": "2FA yalnızca panelden, kendi hesabınla kurulur.",
+      "recovery_failed": "Kurtarma kodları üretilemedi.",
+      "setup_expired": "Kurulum süresi doldu. Baştan başla."
+    },
+    "user": {
+      "bad_name": "Kullanıcı adı 1-32 karakter olmalı (küçük harf, rakam, . _ -) ve ayrılmış olmamalı.",
+      "bad_role": "Rol 'admin' ya da 'viewer' olmalı.",
+      "name_taken": "Bu kullanıcı adı zaten var.",
+      "own_delete": "Kendi hesabını silemezsin.",
+      "own_role": "Kendi rolünü değiştiremezsin.",
+      "owner_fixed": "Sahip hesabın rolü değişmez; parolasını Ayarlar'dan ya da `kut passwd` ile değiştir.",
+      "owner_undeletable": "Sahip hesap silinemez."
+    },
+    "validate": {
+      "conf_path_iface": "server.json: conf_path {path} arayüzün yapılandırma dosyası ({iface}.conf) değil",
+      "conf_path_want": "server.json: conf_path {path} olmalı: {want}",
+      "dns": "server.json: geçersiz DNS {dns}",
+      "endpoint": "server.json: geçersiz uç nokta {endpoint}",
+      "iface": "server.json: geçersiz arayüz adı {iface}",
+      "keepalive": "server.json: geçersiz keepalive {keepalive} (0-120)",
+      "mtu": "server.json: geçersiz MTU {mtu} (0 ya da 1280-1500)",
+      "notify_chat": "notify.json: Telegram sohbet kimliği geçersiz",
+      "notify_quiet": "notify.json: sessiz saat {value} SS:DD biçiminde olmalı",
+      "notify_token": "notify.json: Telegram bot jetonu biçimi geçersiz",
+      "notify_webhook": "notify.json: webhook adresi http:// ya da https:// ile başlayan geçerli bir adres olmalı",
+      "peer_id_dup": "peers.json: {name} cihazının kimliği ({id}) başka bir cihazda da var",
+      "peer_ip_dup": "peers.json: {name} cihazının IP adresi {ip} başka bir cihazda da var",
+      "peer_ip_range": "peers.json: {name} cihazının IP adresi {ip} VPN ağında ({subnet}) değil",
+      "peer_ip_reserved": "peers.json: {name} cihazının IP adresi {ip} ağ, yayın ya da sunucu adresi",
+      "peer_key": "peers.json: {name} cihazının anahtarı geçersiz (base64, 32 bayt olmalı)",
+      "peer_name": "peers.json: {n}. cihazın adı geçersiz: {name}",
+      "peer_pubkey_dup": "peers.json: {name} cihazının açık anahtarı başka bir cihazda da var",
+      "policy_rule": "policies.json: {policy} profilinin bir kuralı geçersiz: {msg}",
+      "port": "server.json: geçersiz port {port} (1-65535)",
+      "server_key": "server.json: sunucu anahtarı geçersiz (base64, 32 bayt olmalı)",
+      "server_unreadable": "server.json okunamadı: {msg}",
+      "subnet_ipv4": "server.json: geçersiz alt ağ {subnet} (IPv4 ağı olmalı)",
+      "subnet_range": "server.json: geçersiz alt ağ {subnet} (/{min}-/{max} arası, ağ adresiyle başlayan bir IPv4 ağı olmalı)",
+      "ula": "server.json: geçersiz IPv6 ULA öneki {ula} (fd00::/8 içinde bir /64 olmalı)",
+      "user_dup": "users.json: {name} hesabı iki kez var",
+      "user_name": "users.json: {n}. hesabın adı geçersiz ya da ayrılmış: {name}",
+      "user_role": "users.json: {name} hesabının rolü geçersiz: {role}"
+    }
+  },
+  "totp": {
+    "flag_user": "hesap adı (boşsa sahip: admin)"
+  }
+}

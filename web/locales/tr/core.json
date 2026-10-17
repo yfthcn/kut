@@ -1,0 +1,76 @@
+{
+  "common": {
+    "cancel": "Vazgeç",
+    "close": "Kapat",
+    "logout": "Çıkış",
+    "more": "Daha",
+    "page_failed": "Bu sayfa yüklenemedi",
+    "download_failed": "İndirilemedi: {msg}",
+    "session_expired": "Oturum süresi doldu."
+  },
+  "theme": {
+    "light": "Açık tema",
+    "dark": "Koyu tema",
+    "to_light": "Açık temaya geç",
+    "to_dark": "Koyu temaya geç"
+  },
+  "lang": {
+    "label": "Dil",
+    "tr": "Türkçe",
+    "en": "English"
+  },
+  "login": {
+    "subtitle": "WireGuard yönetim paneli",
+    "username": "Kullanıcı adı",
+    "password": "Parola",
+    "code": "Doğrulama kodu",
+    "code_hint": "6 haneli kod ya da kurtarma kodu",
+    "submit": "Giriş yap"
+  },
+  "nav": {
+    "sections": "Bölümler",
+    "main_sections": "Ana bölümler",
+    "panel": "Panel",
+    "devices": "Cihazlar",
+    "access": "Erişim",
+    "access_long": "Erişim profilleri",
+    "report": "Rapor",
+    "report_long": "Durum raporu",
+    "server": "Sunucu",
+    "settings": "Ayarlar",
+    "log": "Günlük",
+    "about": "Hakkında"
+  },
+  "status": {
+    "running": "Çalışıyor",
+    "dry": "dry-run",
+    "iface_down": "Arayüz kapalı",
+    "who_viewer": "{user} · izleyici"
+  },
+  "time": {
+    "never": "hiç",
+    "now": "şimdi",
+    "ago_s": "{n} sn önce",
+    "ago_m": "{n} dk önce",
+    "ago_h": "{n} sa önce",
+    "ago_d": { "one": "{n} gün önce", "other": "{n} gün önce" },
+    "in_s": "{n} sn",
+    "in_m": "{n} dk",
+    "in_h": "{n} sa",
+    "in_d": { "one": "{n} gün", "other": "{n} gün" },
+    "rate": "{v}/sn"
+  },
+  "err": {
+    "http": "HTTP {status}",
+    "bad_request": "Geçersiz istek.",
+    "forbidden": "Yasak istek.",
+    "no_session": "Oturum yok.",
+    "viewer_readonly": "Bu hesap yalnızca izleyebilir.",
+    "too_many_attempts": "Çok fazla hatalı deneme. Bir dakika bekle.",
+    "bad_password": "Parola yanlış.",
+    "bad_credentials": "Kullanıcı adı ya da parola yanlış.",
+    "bad_code": "Doğrulama kodu yanlış ya da daha önce kullanılmış.",
+    "bad_lang": "Desteklenmeyen dil.",
+    "save_failed": "Kaydedilemedi: {msg}"
+  }
+}

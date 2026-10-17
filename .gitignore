@@ -1,0 +1,11 @@
+# Yalnızca repo kökündeki çalışma zamanı/derleme çıktıları (alt dizinlerdeki aynı adlı kaynak dosyaları etkilenmesin).
+/data/
+/dist/
+/kut
+/maint.json
+# Her yerde: yedekler, istemci yapılandırmaları (özel anahtar içerir), ortam dosyaları.
+kut-yedek-*
+*.tar.gz
+*.tar.gz.enc
+*.conf
+.env

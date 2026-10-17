@@ -1,0 +1,37 @@
+{
+  "cli": {
+    "flag": {
+      "backup_out": "çıktı dosyası (varsayılan: kut-yedek-TARİH.tar.gz)",
+      "backup_encrypt": "yedeği parolayla şifrele (parola KUT_BACKUP_PASSWORD'den ya da sorulur)",
+      "restore_file": "yedek dosyası (zorunlu)",
+      "restore_force": "var olan veri dizininin üzerine yaz",
+      "restore_endpoint": "yedekteki uç noktayı bununla değiştir (sunucu taşırken yeni IP ya da alan adı)"
+    },
+    "backup": {
+      "written": {
+        "one": "Yedek yazıldı: {name} ({n} dosya)",
+        "other": "Yedek yazıldı: {name} ({n} dosya)"
+      },
+      "encrypted_note": "Yedek parolayla şifrelendi. Parolayı kaybedersen yedek açılamaz; Kut onu kurtaramaz.",
+      "plain_warning": "DİKKAT: Yedek sunucunun özel anahtarını ve ön paylaşımlı anahtarları içerir ve ŞİFRESİZDİR. Güvenli bir yerde sakla ya da -encrypt ile şifrele.",
+      "pass_prompt": "Yedek parolası: ",
+      "pass_again": "Yedek parolası (tekrar): "
+    },
+    "restore": {
+      "done": {
+        "one": "Geri yüklendi: {n} dosya → {data}\nŞimdi servisi başlat: sudo systemctl start kut (wg yapılandırması açılışta yeniden yazılır)\n",
+        "other": "Geri yüklendi: {n} dosya → {data}\nŞimdi servisi başlat: sudo systemctl start kut (wg yapılandırması açılışta yeniden yazılır)\n"
+      }
+    }
+  },
+  "err": {
+    "clibackup": {
+      "not_data_dir": "{data} bir Kut veri dizini değil: {err}",
+      "pass_mismatch": "parolalar uyuşmuyor",
+      "need_file": "-f yedek dosyası gerekli",
+      "service_running": "kut servisi çalışıyor; önce durdur: sudo systemctl stop kut",
+      "not_empty": "{data} zaten dolu; üzerine yazmak için -force ekle (mevcut dosyalar .bak olarak saklanır)",
+      "bad_endpoint": "-endpoint: {err}"
+    }
+  }
+}

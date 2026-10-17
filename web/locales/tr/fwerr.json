@@ -1,0 +1,19 @@
+{
+  "err": {
+    "fw": {
+      "apply": {
+        "skeleton": "güvenlik duvarı iskeleti: {err}",
+        "skeleton_nat": "güvenlik duvarı iskeleti (nat): {err}",
+        "restore": "{label}güvenlik duvarı: {err}",
+        "restore_nat": "{label}güvenlik duvarı (nat): {err}"
+      }
+    },
+    "fw6": {
+      "addr": "IPv6 adresi atanamadı (sunucuda IPv6 kapalı olabilir): {err}",
+      "accept_ra": "accept_ra ayarlanamadı ({dev}): {err}",
+      "forwarding": "IPv6 yönlendirme açılamadı: {err}",
+      "no_ip6tables": "ip6tables bulunamadı (sudo apt install iptables); IPv6 açılamaz",
+      "skeleton": "IPv6 {err}"
+    }
+  }
+}

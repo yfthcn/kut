@@ -1,0 +1,76 @@
+{
+  "common": {
+    "cancel": "Cancel",
+    "close": "Close",
+    "logout": "Log out",
+    "more": "More",
+    "page_failed": "This page could not be loaded",
+    "download_failed": "Download failed: {msg}",
+    "session_expired": "Session expired."
+  },
+  "theme": {
+    "light": "Light theme",
+    "dark": "Dark theme",
+    "to_light": "Switch to light theme",
+    "to_dark": "Switch to dark theme"
+  },
+  "lang": {
+    "label": "Language",
+    "tr": "Türkçe",
+    "en": "English"
+  },
+  "login": {
+    "subtitle": "WireGuard management panel",
+    "username": "Username",
+    "password": "Password",
+    "code": "Verification code",
+    "code_hint": "6-digit code or recovery code",
+    "submit": "Sign in"
+  },
+  "nav": {
+    "sections": "Sections",
+    "main_sections": "Main sections",
+    "panel": "Dashboard",
+    "devices": "Devices",
+    "access": "Access",
+    "access_long": "Access profiles",
+    "report": "Report",
+    "report_long": "Status report",
+    "server": "Server",
+    "settings": "Settings",
+    "log": "Activity",
+    "about": "About"
+  },
+  "status": {
+    "running": "Running",
+    "dry": "dry-run",
+    "iface_down": "Interface down",
+    "who_viewer": "{user} · viewer"
+  },
+  "time": {
+    "never": "never",
+    "now": "just now",
+    "ago_s": "{n} s ago",
+    "ago_m": "{n} min ago",
+    "ago_h": "{n} h ago",
+    "ago_d": { "one": "{n} day ago", "other": "{n} days ago" },
+    "in_s": "{n} s",
+    "in_m": "{n} min",
+    "in_h": "{n} h",
+    "in_d": { "one": "{n} day", "other": "{n} days" },
+    "rate": "{v}/s"
+  },
+  "err": {
+    "http": "HTTP {status}",
+    "bad_request": "Invalid request.",
+    "forbidden": "Forbidden request.",
+    "no_session": "Not signed in.",
+    "viewer_readonly": "This account can only view.",
+    "too_many_attempts": "Too many failed attempts. Wait a minute.",
+    "bad_password": "Wrong password.",
+    "bad_credentials": "Wrong username or password.",
+    "bad_code": "Verification code is wrong or already used.",
+    "bad_lang": "Unsupported language.",
+    "save_failed": "Could not save: {msg}"
+  }
+}

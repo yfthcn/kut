@@ -1,0 +1,45 @@
+{
+  "logui": {
+    "title": "Activity",
+    "intro": "Who did what, and when.",
+    "filter_aria": "Filter by event type",
+    "search_ph": "Search: event, IP, account…",
+    "search_aria": "Search",
+    "account_aria": "Account",
+    "range_aria": "Time range",
+    "all_accounts": "All accounts",
+    "refresh": "Refresh",
+    "csv": "Download CSV",
+    "json": "Download JSON",
+    "more": "Show more",
+    "clear_filter": "Clear filter",
+    "empty": "No entries match this filter.",
+    "showing": { "one": "Showing {n} entry", "other": "Showing {n} entries" },
+    "retention_days": { "one": "Kept for {n} day", "other": "Kept for {n} days" },
+    "retention_forever": "Kept indefinitely",
+    "total": { "one": "{n} event in total", "other": "{n} events in total" },
+    "oldest": "oldest {date}",
+    "settings_hint": "You can change this under Settings → Data retention.",
+    "col": {
+      "time": "Time",
+      "from": "From",
+      "account": "Account",
+      "event": "Event"
+    },
+    "group": {
+      "giris": "Sign-in/out",
+      "guvenlik": "Failed attempts",
+      "cihaz": "Device",
+      "profil": "Profile",
+      "hesap": "Account",
+      "ayar": "Setting",
+      "sistem": "System"
+    },
+    "range": {
+      "all": "All entries",
+      "hour": "Last hour",
+      "day": "Last 24 hours",
+      "week": "Last 7 days"
+    }
+  }
+}

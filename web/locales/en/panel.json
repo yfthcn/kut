@@ -1,0 +1,49 @@
+{
+  "panel": {
+    "title": "Dashboard",
+    "subtitle": "Live status of the VPN network.",
+    "map": {
+      "title": "Network map",
+      "aria": "Network map: server and devices",
+      "server": "Server",
+      "empty": "No devices yet."
+    },
+    "attention": "Needs attention",
+    "traffic": "Traffic",
+    "range_label": "Traffic range",
+    "legend_up": "Upload (from devices)",
+    "legend_down": "Download (to devices)",
+    "stat": {
+      "devices": "Devices",
+      "off": "Off",
+      "internet": "Internet allowed",
+      "total": "Total traffic"
+    },
+    "table": {
+      "device": "Device",
+      "state": "Status",
+      "handshake": "Last handshake",
+      "empty": "No devices yet. Add the first one from the Devices tab."
+    },
+    "all_ok": "All good",
+    "checks_passed": {
+      "one": "{n} check run; it passed.",
+      "other": "All {n} checks passed."
+    }
+  },
+  "chart": {
+    "aria_default": "Traffic chart for the last hour",
+    "collecting": "The chart needs a little more data (one sample every {n} s).",
+    "tip_down": "↓ download  {rate}",
+    "tip_up": "↑ upload  {rate}",
+    "gap": "Panel was off: {from}–{to}",
+    "gap_down": "↓ average download  {rate}",
+    "gap_up": "↑ average upload  {rate}",
+    "range": {
+      "hour": "Last 1 hour",
+      "day": "Last 24 hours",
+      "week": "Last 7 days",
+      "month": "Last 30 days"
+    }
+  }
+}

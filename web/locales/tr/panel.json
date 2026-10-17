@@ -1,0 +1,49 @@
+{
+  "panel": {
+    "title": "Panel",
+    "subtitle": "VPN ağının anlık durumu.",
+    "map": {
+      "title": "Ağ haritası",
+      "aria": "Ağ haritası: sunucu ve cihazlar",
+      "server": "Sunucu",
+      "empty": "Henüz cihaz yok."
+    },
+    "attention": "Dikkat edilecekler",
+    "traffic": "Trafik",
+    "range_label": "Trafik aralığı",
+    "legend_up": "Yükleme (cihazlardan)",
+    "legend_down": "İndirme (cihazlara)",
+    "stat": {
+      "devices": "Cihaz",
+      "off": "Kapalı",
+      "internet": "İnternet izinli",
+      "total": "Toplam trafik"
+    },
+    "table": {
+      "device": "Cihaz",
+      "state": "Durum",
+      "handshake": "Son el sıkışma",
+      "empty": "Henüz cihaz yok. Cihazlar sekmesinden ilkini ekle."
+    },
+    "all_ok": "Her şey yolunda",
+    "checks_passed": {
+      "one": "{n} denetimin hepsi geçti.",
+      "other": "{n} denetimin hepsi geçti."
+    }
+  },
+  "chart": {
+    "aria_default": "Son bir saatlik trafik grafiği",
+    "collecting": "Grafik için biraz veri birikmeli (her {n} sn bir örnek).",
+    "tip_down": "↓ indirme  {rate}",
+    "tip_up": "↑ yükleme  {rate}",
+    "gap": "Panel kapalıydı: {from}–{to}",
+    "gap_down": "↓ ortalama indirme  {rate}",
+    "gap_up": "↑ ortalama yükleme  {rate}",
+    "range": {
+      "hour": "Son 1 saat",
+      "day": "Son 24 saat",
+      "week": "Son 7 gün",
+      "month": "Son 30 gün"
+    }
+  }
+}

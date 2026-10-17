@@ -1,0 +1,39 @@
+[Unit]
+Description=Kut (WireGuard yönetim paneli)
+After=network-online.target wg-quick@__IFACE__.service
+Wants=wg-quick@__IFACE__.service
+StartLimitIntervalSec=120
+StartLimitBurst=10
+
+[Service]
+Type=simple
+ExecStartPre=+/usr/bin/touch /run/xtables.lock
+ExecStart=/usr/local/bin/kut serve -data /var/lib/kut
+# Restart=always zorunlu: geri yükleme ve "servisi yeniden başlat" SIGTERM ile çıkıp systemd'nin geri getirmesine dayanır.
+Restart=always
+RestartSec=3
+
+# Sertleştirme
+NoNewPrivileges=true
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_RAW
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_RAW
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/etc/wireguard /var/lib/kut
+ReadWritePaths=-/run/xtables.lock
+# ProtectKernelTunables kullanılmaz: IPv6 ayarlardan açılınca Kut net.ipv6.conf.*.forwarding/accept_ra yazar (systemd.exec(5): /proc/sys salt-okunur olur).
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+RestrictRealtime=true
+RestrictNamespaces=true
+ProtectHostname=true
+ProtectClock=true
+ProtectKernelLogs=true
+SystemCallArchitectures=native
+UMask=0077
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6 AF_NETLINK
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,102 @@
+{
+  "serverui": {
+    "title": "Server",
+    "intro": "The WireGuard interface and the firewall rules Kut manages. Read-only; change settings on the Settings tab.",
+    "apply": "Re-apply",
+    "apply_text": "The configuration and firewall rules are written again from scratch. Connected devices stay connected.",
+    "apply_ok": "Apply",
+    "applied": "Applied",
+    "down": "Down",
+    "default": "default",
+    "peers_line": "{active} active / {total} registered · {kernel} in the kernel",
+    "kv": {
+      "address": "Address",
+      "endpoint": "Endpoint",
+      "public_key": "Public key",
+      "conf": "Configuration",
+      "mtu": "MTU",
+      "listen": "Panel listens on",
+      "devices": "Devices"
+    },
+    "fw": {
+      "title": "Firewall",
+      "note": "Kut manages only the KUT-* chains; it does not touch ufw or your other rules. While the chains are empty nothing passes (fail-closed).",
+      "ok": "Rules in place",
+      "out_of_sync": "Rules differ from expected",
+      "no_jump": "Chains are not hooked in",
+      "down": "Interface is down",
+      "dry": "dry-run: not applied",
+      "rules": "Rules and live counters",
+      "rules_intro": "Every rule Kut writes carries a comment tag (kut:…); the counters are matched to rules by that tag and refresh every 5 seconds. Tap a row to see the exact iptables line.",
+      "rules_empty": "No rules yet: they appear here once you add an active device.",
+      "simulated": "dry-run: the counters are simulated, not read from iptables.",
+      "filter_label": "Show rules for",
+      "filter_all": "All",
+      "filter_system": "System",
+      "chain_empty": "No rules in this chain for this filter.",
+      "col": {
+        "device": "Device",
+        "kind": "Rule",
+        "target": "Target",
+        "port": "Port",
+        "action": "Action",
+        "packets": "Packets",
+        "bytes": "Bytes"
+      },
+      "show_raw": "Show the iptables line",
+      "raw": "iptables line",
+      "copy": "Copy",
+      "copied": "Copied",
+      "copy_failed": "Could not copy; select the text manually.",
+      "reverse": "reverse direction",
+      "any": "any",
+      "none": "—",
+      "target": {
+        "server": "Server",
+        "all": "All devices",
+        "internet": "Internet"
+      },
+      "chain": {
+        "forward": "Traffic passing through the server. Kut's fixed rules sit at the top: replies are let through, device-to-device traffic goes to KUT-PEERS, internet traffic to KUT-INET, everything else from or to the VPN is dropped.",
+        "input": "Traffic addressed to the server itself; everything from the VPN interface goes to KUT-IN.",
+        "postrouting": "Address translation on the way out; VPN traffic goes to KUT-NAT.",
+        "kut_peers": "Device-to-device permissions from access profiles. Anything not accepted here is dropped.",
+        "kut_in": "Which server ports each device may reach (replies, ping, the panel for devices without a profile, profile rules).",
+        "kut_icmp": "ICMP errors (for example path MTU) are accepted only from a side of the flow they belong to.",
+        "kut_inet": "Internet access for devices that have it, with optional blocking of private networks.",
+        "kut_nat": "Devices with internet access leave with the server's address (MASQUERADE)."
+      },
+      "kind": {
+        "skel": "Fixed rule",
+        "est": "Replies of open connections",
+        "icmp-related": "ICMP errors of open connections",
+        "ping": "Ping to the server",
+        "panel": "Panel (no profile)",
+        "peer": "Profile rule",
+        "peer-free": "Free inside the VPN",
+        "server": "Profile rule (server)",
+        "in-drop": "Other server ports closed",
+        "icmp-orig": "ICMP error, flow initiator",
+        "icmp-repl": "ICMP error, flow responder",
+        "icmp-drop": "Other ICMP errors",
+        "inet-deny": "Private network blocked",
+        "inet": "Internet access",
+        "nat": "Address translation"
+      },
+      "skel": {
+        "fwd-reply": "Replies to VPN devices",
+        "fwd-peer-reply": "Replies between devices",
+        "fwd-icmp": "ICMP errors between devices → KUT-ICMP",
+        "fwd-peers": "Device to device → KUT-PEERS",
+        "fwd-peers-drop": "Unmatched device to device: drop",
+        "fwd-inet": "To the internet → KUT-INET",
+        "fwd-in-drop": "Rest from the VPN: drop",
+        "fwd-out-drop": "New traffic into the VPN: drop",
+        "in": "To the server → KUT-IN",
+        "nat": "VPN network → KUT-NAT"
+      }
+    },
+    "conf_note": "Private and preshared keys are masked.",
+    "conf_show": "Show the configuration"
+  }
+}

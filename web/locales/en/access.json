@@ -1,0 +1,34 @@
+{
+  "access": {
+    "all_ports": "all ports",
+    "all_traffic": "all traffic",
+    "day": {
+      "0": "Sun",
+      "1": "Mon",
+      "2": "Tue",
+      "3": "Wed",
+      "4": "Thu",
+      "5": "Fri",
+      "6": "Sat"
+    },
+    "dst_inactive": "The target device is disabled or frozen; it is not defined on the server.",
+    "dst_not_found": "Target device not found.",
+    "every_day": "every day",
+    "free_between_devices": "No access profile: devices can reach each other freely inside the VPN.",
+    "host_decides": "No access profile: the server's own firewall (ufw) decides for server ports.",
+    "ip_available": "This IP is available.",
+    "isolated_between_devices": "No access profile: this device reaches only the server. Give it a profile to open access to other devices.",
+    "matrix_free": "open",
+    "matrix_host": "host firewall; panel (tcp/{port}) open",
+    "panel_open": "The panel port is open to devices without an access profile.",
+    "ping": "ping (ICMP)",
+    "ping_open": "Ping to the server is always allowed.",
+    "policy_allows": "The profile “{policy}” allows it: {rule}",
+    "policy_allows_reverse": "The profile “{policy}” allows it: {rule} (mutual rule)",
+    "policy_missing": "(not found)",
+    "policy_no_rule": "The profile “{policy}” has no rule that allows this connection.",
+    "policy_off_window": "The profile “{policy}” allows it, but it is outside the time window right now: {rule}",
+    "same_device": "Source and target are the same device.",
+    "src_inactive": "The source device is disabled or frozen; it is not defined on the server."
+  }
+}

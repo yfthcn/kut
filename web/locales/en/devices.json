@@ -1,0 +1,246 @@
+{
+  "devices": {
+    "title": "Devices",
+    "subtitle": "Phones, computers and servers that connect to the VPN.",
+    "summary": {
+      "one": "{online} of {n} device is online right now.",
+      "other": "{online} of {n} devices are online right now."
+    },
+    "add": "Add device",
+    "add_first": "Add first device",
+    "empty_title": "No devices yet",
+    "empty_text": "Add the first device and scan the QR code with the WireGuard app on the phone.",
+    "filter_label": "Filter by group",
+    "filter_all": "All",
+    "state": {
+      "online": "Online",
+      "offline": "Offline",
+      "frozen": "Frozen",
+      "disabled": "Off",
+      "expired": "Expired",
+      "outside": "Outside hours",
+      "frozen_for": "Frozen · {left} left"
+    },
+    "dur": {
+      "none": "No expiry",
+      "make_none": "Remove expiry",
+      "h1": "1 hour",
+      "h6": "6 hours",
+      "h8": "8 hours",
+      "d1": "1 day",
+      "d3": "3 days",
+      "d7": "7 days",
+      "d30": "30 days"
+    },
+    "field": {
+      "name": "Device name",
+      "note": "Note",
+      "ip": "VPN IP address",
+      "policy": "Access profile",
+      "group": "Group",
+      "group_ph": "optional (e.g. Family)",
+      "validity": "Validity",
+      "validity_now": "Validity (starts now)",
+      "internet": "Internet access"
+    },
+    "policy": {
+      "none": "No profile (server only)",
+      "none_free": "No profile (unrestricted inside the VPN)"
+    },
+    "sched": {
+      "label": "Access hours",
+      "always": "Always",
+      "tunnel": "Can connect only during these hours",
+      "internet": "Can reach the internet only during these hours",
+      "start": "Start",
+      "end": "End",
+      "hint": "If the end is before the start, the window crosses midnight (like 22:00–06:00). Times are the server's local time.",
+      "hint_tz": "If the end is before the start, the window crosses midnight (like 22:00–06:00). Times are the server's local time ({tz})."
+    },
+    "add_dlg": {
+      "title": "New device",
+      "submit": "Add device",
+      "name_ph": "e.g. Alice's phone",
+      "note_ph": "optional",
+      "ip_auto": "auto",
+      "ip_auto_ph": "auto: {ip}",
+      "ip_hint": "If left empty, the first free IP is assigned.",
+      "guest_hint": "Set a duration for guests: when it ends the device is turned off, not deleted.",
+      "internet_hint": "When on, all of the device's internet traffic goes through this server (the config is generated accordingly and the server allows it). When off, only the VPN network is used."
+    },
+    "edit_dlg": {
+      "title": "Edit device · {name}",
+      "save": "Save",
+      "keep_expired": "Expired (leave unchanged)",
+      "keep_left": "Keep remaining time ({left})",
+      "keep_none": "Leave unchanged (no expiry)",
+      "policy_hint": "Profile changes are applied to the firewall immediately; the device's config does not need to be refreshed."
+    },
+    "regen": {
+      "title": "Regenerate · {name}",
+      "submit": "Generate new key",
+      "intro_a": "A new key is generated for the device. ",
+      "intro_b": "The old config stops working",
+      "intro_c": "; the person must install the new one.",
+      "internet_hint": "The new config routes all internet traffic through the tunnel, and the permission on the server is set to match. To change only the server permission, use the Internet access permission switch on the card."
+    },
+    "qr": {
+      "title": "QR code · {name}",
+      "text": "This device's QR code was shown once, when it was added. Kut does not store the private key, so it cannot produce the same code again.",
+      "hint": "For a new QR, generate a new key for the device. The old config stops working at that moment; the person must scan the new one.",
+      "new_key": "Generate new key…"
+    },
+    "config": {
+      "title": "Device configuration",
+      "added": "Device added",
+      "new": "New configuration",
+      "format": "Configuration format",
+      "tab_qr": "QR code",
+      "tab_text": "Text",
+      "no_qr": "Could not generate a QR code; use the .conf file.",
+      "step1": "Open the WireGuard app on the phone.",
+      "step2": "Tap the + button and choose “Create from QR code”.",
+      "step3": "Scan this code and turn the tunnel on.",
+      "touch_hint": "If you are setting up this very device, you cannot scan a QR code: download the .conf file and choose “Import from file” in WireGuard.",
+      "vpn_inet": "VPN + internet access",
+      "vpn_only": "VPN network only",
+      "notice": "This configuration is shown only now. The private key is not stored on the server; if it is lost, “Regenerate” is needed.",
+      "save_qr": "Save QR",
+      "copy": "Copy",
+      "download_conf": "Download .conf",
+      "copied": "Configuration copied",
+      "copy_failed": "Could not copy; select the text manually."
+    },
+    "freeze": {
+      "title": "Freeze · {name}",
+      "text": "When the time is up, the device comes back on its own.",
+      "custom": "Custom duration (minutes)",
+      "minutes_ph": "minutes",
+      "submit": "Freeze"
+    },
+    "inet": {
+      "title": "Internet access permission",
+      "use_off": "Off: the server does not forward internet traffic.",
+      "use_idle": "Allowed, but this device has not sent any internet traffic through the tunnel yet (it may be using only the VPN network).",
+      "use_active": "Allowed and in use: {bytes} forwarded, last traffic {ago}.",
+      "use_stale": "Allowed, not in use: last internet traffic {ago}.",
+      "allow_title": "Allow internet access",
+      "block_title": "Turn off internet access",
+      "allow_text": "The server starts forwarding internet traffic for “{name}”. This alone is not enough: if the device's config does not route all internet traffic through the tunnel, traffic still leaves through its own connection. To send all internet traffic through the tunnel, get a new config with “Regenerate”.",
+      "block_text": "The server immediately stops forwarding this device's internet traffic. If the device's config routes all internet traffic through the tunnel, the device cannot reach the internet; only the VPN network works. It stays this way until you regenerate the config.",
+      "allow": "Allow",
+      "block": "Turn off",
+      "allowed": "Internet access allowed",
+      "blocked": "Internet access turned off"
+    },
+    "bulk": {
+      "apply": "Apply",
+      "done": {
+        "one": "{msg} ({n} device)",
+        "other": "{msg} ({n} devices)"
+      },
+      "selected_n": {
+        "one": "{n} device selected.",
+        "other": "{n} devices selected."
+      },
+      "selected_short": "{n} selected",
+      "select_all": "Select all",
+      "enable": "Turn on",
+      "disable": "Turn off",
+      "unfreeze": "Unfreeze",
+      "policy": "Profile",
+      "policy_title": "Assign access profile",
+      "policy_done": "Profile assigned",
+      "internet": "Internet access",
+      "internet_title": "Internet access permission",
+      "internet_done": "Internet access updated",
+      "server_permission": "Server permission",
+      "duration": "Duration",
+      "validity": "Validity",
+      "validity_label": "Duration (starts now)",
+      "validity_done": "Validity updated",
+      "hours": "Hours",
+      "hours_done": "Access hours updated",
+      "group_title": "Assign group",
+      "group_done": "Group updated",
+      "delete": "Delete",
+      "delete_title": "Delete selected",
+      "delete_text": {
+        "one": "Permanently delete {n} device? Its connection is cut immediately and its profile rules are cleaned up.",
+        "other": "Permanently delete {n} devices? Their connections are cut immediately and their profile rules are cleaned up."
+      },
+      "clear": "Clear selection"
+    },
+    "toast": {
+      "saved": "Saved",
+      "frozen": "Frozen",
+      "unfrozen": "Unfrozen",
+      "enabled": "Turned on",
+      "disabled": "Turned off",
+      "deleted": "Deleted"
+    },
+    "traffic": {
+      "title": "Traffic · {name}",
+      "range": "Range",
+      "rates_note": "(download / upload, from the device's view)",
+      "hint": "History is saved to disk (every 10 minutes and on shutdown); it is kept across service restarts. Long ranges are sampled sparsely."
+    },
+    "delete": {
+      "title": "Delete device",
+      "text": "Permanently delete “{name}”? This device's connection is cut immediately and its profile rules are cleaned up."
+    },
+    "tag": {
+      "inet_on": "internet allowed",
+      "inet_off": "VPN only",
+      "inet_on_title": "The server forwards this device's internet traffic",
+      "inet_off_title": "The server does not forward this device's internet traffic",
+      "no_policy": "no profile",
+      "policy_group": "{name} · group",
+      "group_policy_title": "The group's default profile",
+      "sched_internet": "internet {from}–{to}",
+      "sched_tunnel": "connection {from}–{to}",
+      "sched_off": "{label} · closed now",
+      "sched_title": "Access hours (server time)",
+      "guest": "guest · {left} left",
+      "guest_title": "Guest device: turns itself off when the time is up"
+    },
+    "card": {
+      "turn_on": "Turn device on",
+      "turn_off": "Turn device off",
+      "handshake": "handshake {ago}",
+      "no_handshake": "not connected yet",
+      "rx_cap": "received from device",
+      "tx_cap": "sent to device",
+      "details": "Details and internet permission",
+      "endpoint": "Endpoint",
+      "last_seen": "Last seen",
+      "added": "Added",
+      "qr": "QR",
+      "traffic": "Traffic",
+      "edit": "Edit",
+      "freeze": "Freeze…",
+      "unfreeze": "Unfreeze",
+      "regen": "Regenerate…",
+      "delete": "Delete…"
+    },
+    "aria": {
+      "qr": "WireGuard QR code for {name}",
+      "inet": "{name} internet access permission",
+      "toggle": "{name} on/off",
+      "pick": "Select {name}",
+      "card": "{name}, {state}",
+      "more": "More actions for {name}",
+      "select_all": "Select all visible devices"
+    }
+  },
+  "kind": {
+    "label": "Device type",
+    "phone": "Phone",
+    "tablet": "Tablet",
+    "laptop": "Laptop",
+    "desktop": "Desktop",
+    "tv": "TV",
+    "server": "Server / NAS",
+    "other": "Other"
+  }
+}

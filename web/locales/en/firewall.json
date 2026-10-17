@@ -1,0 +1,22 @@
+{
+  "fw": {
+    "dry": "Dry run: rules are not applied; the rules that should be in place are shown below",
+    "down": "The WireGuard interface is down",
+    "forward_policy": "FORWARD default policy: {policy}",
+    "no_ip6tables": "ip6tables not found",
+    "skeleton": {
+      "top": "{fam} firewall skeleton is missing or out of order (the {chain} chain does not start with Kut's rules). The panel repairs it within a few seconds.",
+      "read_failed": "{fam} firewall skeleton is missing or out of order ({chain} could not be read: {err}). The panel repairs it within a few seconds.",
+      "nat_jump": "{fam} firewall skeleton is missing or out of order (no Kut jump in nat/POSTROUTING). The panel repairs it within a few seconds.",
+      "chain_missing": "{fam} firewall skeleton is missing or out of order (the {chain} chain does not exist). The panel repairs it within a few seconds."
+    },
+    "chain": {
+      "read_failed": "{fam} {chain} could not be read",
+      "count": {
+        "one": "{fam} {chain} chain has {n} rule, expected {want}",
+        "other": "{fam} {chain} chain has {n} rules, expected {want}"
+      },
+      "rule_differs": "{fam} {chain} chain: rule {pos} differs from what it should be"
+    }
+  }
+}

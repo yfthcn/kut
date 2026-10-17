@@ -1,0 +1,131 @@
+{
+  "log": {
+    "apply": "Configuration and firewall re-applied",
+    "login": "Signed in",
+    "login_fail": "Failed sign-in attempt",
+    "login_fail.code": "Failed sign-in attempt: wrong verification code",
+    "logout": "Signed out",
+    "password": "Password changed; the account's other sessions were closed",
+    "password.local": "Password changed from the server (kut passwd); the account's sessions were closed: {name}",
+    "password_fail": "Password change attempt: the current password is wrong",
+    "peer_bulk": {
+      "delete": {
+        "one": "Bulk action (delete): {n} device — {names}",
+        "other": "Bulk action (delete): {n} devices — {names}"
+      },
+      "disable": {
+        "one": "Bulk action (disable): {n} device — {names}",
+        "other": "Bulk action (disable): {n} devices — {names}"
+      },
+      "enable": {
+        "one": "Bulk action (enable): {n} device — {names}",
+        "other": "Bulk action (enable): {n} devices — {names}"
+      },
+      "expires": {
+        "one": "Bulk action (validity): {n} device — {names}",
+        "other": "Bulk action (validity): {n} devices — {names}"
+      },
+      "freeze": {
+        "one": "Bulk action (freeze): {n} device — {names}",
+        "other": "Bulk action (freeze): {n} devices — {names}"
+      },
+      "group": {
+        "one": "Bulk action (group): {n} device — {names}",
+        "other": "Bulk action (group): {n} devices — {names}"
+      },
+      "internet": {
+        "one": "Bulk action (internet access): {n} device — {names}",
+        "other": "Bulk action (internet access): {n} devices — {names}"
+      },
+      "policy": {
+        "one": "Bulk action (access profile): {n} device — {names}",
+        "other": "Bulk action (access profile): {n} devices — {names}"
+      },
+      "schedule": {
+        "one": "Bulk action (access hours): {n} device — {names}",
+        "other": "Bulk action (access hours): {n} devices — {names}"
+      },
+      "unfreeze": {
+        "one": "Bulk action (unfreeze): {n} device — {names}",
+        "other": "Bulk action (unfreeze): {n} devices — {names}"
+      }
+    },
+    "peer_create": {
+      "internet": "Device added: {name} ({ip}, VPN + internet access)",
+      "vpn": "Device added: {name} ({ip}, VPN network only)"
+    },
+    "peer_delete": "Device deleted: {name} ({ip})",
+    "peer_delete.rules": {
+      "one": "Device deleted: {name} ({ip}); {n} rule removed from access profiles",
+      "other": "Device deleted: {name} ({ip}); {n} rules removed from access profiles"
+    },
+    "peer_edit": "Device edited: {name}",
+    "peer_edit.expiry_removed": "Device edited: {name}; time limit removed",
+    "peer_edit.expiry_set": "Device edited: {name}; validity: {n} min",
+    "peer_edit.group_none": "Device edited: {name}; group: none",
+    "peer_edit.group_set": "Device edited: {name}; group: {group}",
+    "peer_edit.internet_off": "Device edited: {name}; internet access turned off on the server",
+    "peer_edit.internet_on": "Device edited: {name}; internet access allowed on the server",
+    "peer_edit.kind_other": "Device edited: {name}; type: other",
+    "peer_edit.kind_set": "Device edited: {name}; type: {kind}",
+    "peer_edit.policy_removed": "Device edited: {name}; access profile removed",
+    "peer_edit.policy_set": "Device edited: {name}; access profile: {policy}",
+    "peer_edit.rename": "Device edited: {old} → {name}",
+    "peer_edit.schedule_internet": "Device edited: {name}; access hours: {days} {from}–{to} (internet only)",
+    "peer_edit.schedule_removed": "Device edited: {name}; access hours removed",
+    "peer_edit.schedule_tunnel": "Device edited: {name}; access hours: {days} {from}–{to} (whole connection)",
+    "peer_freeze": "Device frozen: {name} ({n} min)",
+    "peer_regenerate": {
+      "inet_inet": "Configuration regenerated: {name} (VPN + internet access → VPN + internet access)",
+      "inet_inet_ip": "Configuration regenerated: {name} (VPN + internet access → VPN + internet access); IP {old} → {new}",
+      "inet_vpn": "Configuration regenerated: {name} (VPN + internet access → VPN network only)",
+      "inet_vpn_ip": "Configuration regenerated: {name} (VPN + internet access → VPN network only); IP {old} → {new}",
+      "vpn_inet": "Configuration regenerated: {name} (VPN network only → VPN + internet access)",
+      "vpn_inet_ip": "Configuration regenerated: {name} (VPN network only → VPN + internet access); IP {old} → {new}",
+      "vpn_vpn": "Configuration regenerated: {name} (VPN network only → VPN network only)",
+      "vpn_vpn_ip": "Configuration regenerated: {name} (VPN network only → VPN network only); IP {old} → {new}"
+    },
+    "peer_toggle": {
+      "off": "Device disabled: {name}",
+      "on": "Device enabled: {name}"
+    },
+    "peer_unfreeze": "Freeze lifted: {name}",
+    "policy_create": {
+      "one": "Access profile added: {name} ({n} rule)",
+      "other": "Access profile added: {name} ({n} rules)"
+    },
+    "policy_delete": "Access profile deleted: {name}",
+    "policy_edit": {
+      "one": "Access profile updated: {name} ({n} rule)",
+      "other": "Access profile updated: {name} ({n} rules)"
+    },
+    "settings": {
+      "change_block_private": "Settings saved: private network block",
+      "change_unprofiled_free": "Settings saved: access between devices without a profile",
+      "change_dns": "Settings saved: DNS",
+      "change_endpoint": "Settings saved: endpoint",
+      "change_ipv6_off": "Settings saved: IPv6 disabled",
+      "change_ipv6_on": "Settings saved: IPv6 enabled ({ula})",
+      "change_keepalive": "Settings saved: keepalive",
+      "change_mtu": "Settings saved: MTU",
+      "change_port": "Settings saved: port",
+      "change_update_check": "Settings saved: update check",
+      "lang": "Server language: {lang}",
+      "nochange": "Settings saved: no changes"
+    },
+    "start": "Kut started (version {version})",
+    "totp_fail": {
+      "disable": "2FA disable attempt failed",
+      "enable": "2FA enable attempt: wrong password"
+    },
+    "totp_off": "Two-factor authentication turned off",
+    "totp_off.local": "Two-factor authentication turned off from the server (kut 2fa-off): {name}",
+    "totp_on": "Two-factor authentication turned on",
+    "user_create": "Account added: {name} ({role})",
+    "user_delete": "Account deleted: {name}",
+    "user_edit": "Account updated: {name}",
+    "user_edit.password": "Account updated: {name}; password reset",
+    "user_edit.role": "Account updated: {name}; role: {role}",
+    "user_edit.role_password": "Account updated: {name}; role: {role}; password reset"
+  }
+}

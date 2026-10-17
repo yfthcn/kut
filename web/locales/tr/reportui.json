@@ -1,0 +1,39 @@
+{
+  "reportui": {
+    "title": "Durum raporu",
+    "intro": "Kurulumun nasıl bir yapıda olduğu ve her şeyin çalışıp çalışmadığı.",
+    "refresh": "Yenile",
+    "fix": "Çözüm: {fix}",
+    "structure": "Yapı",
+    "matrix_title": "Erişim matrisi",
+    "system": "Sistem",
+    "structure_line": "İnternet → {endpoint} (UDP) → {iface} ({ip}) → {devices}",
+    "structure_devices": { "one": "{n} cihaz", "other": "{n} cihaz" },
+    "counts_ok": "{n} geçti",
+    "counts_warn": { "one": "{n} uyarı", "other": "{n} uyarı" },
+    "counts_fail": { "one": "{n} sorun", "other": "{n} sorun" },
+    "as_of": "{date} itibarıyla",
+    "group": {
+      "wireguard": "WireGuard",
+      "firewall": "Güvenlik duvarı",
+      "network": "Ağ",
+      "security": "Güvenlik",
+      "devices": "Cihazlar"
+    },
+    "health": {
+      "ok": "Her şey yolunda",
+      "warn": "Dikkat edilecekler var",
+      "fail": "Düzeltilmesi gereken sorun var"
+    },
+    "matrix": {
+      "empty": "Cihaz eklenince burada kimin kime ulaşabildiği görünür.",
+      "corner": "Kimden ↓ / Kime →",
+      "server": "Sunucu",
+      "legend": "✓ erişebilir · ✕ erişemez · ? sunucu portlarında sunucunun kendi güvenlik duvarı (ufw) karar verir. Hücrenin üstüne gelince ayrıntı görünür.",
+      "allow": "erişebilir",
+      "deny": "erişemez",
+      "host": "sunucu güvenlik duvarına bağlı",
+      "self": "kendisi"
+    }
+  }
+}

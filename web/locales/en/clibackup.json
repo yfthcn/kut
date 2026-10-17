@@ -1,0 +1,37 @@
+{
+  "cli": {
+    "flag": {
+      "backup_out": "output file (default: kut-yedek-DATE.tar.gz)",
+      "backup_encrypt": "encrypt the backup with a passphrase (taken from KUT_BACKUP_PASSWORD or asked)",
+      "restore_file": "backup file (required)",
+      "restore_force": "overwrite an existing data directory",
+      "restore_endpoint": "replace the endpoint in the backup with this one (the new IP or hostname when moving servers)"
+    },
+    "backup": {
+      "written": {
+        "one": "Backup written: {name} ({n} file)",
+        "other": "Backup written: {name} ({n} files)"
+      },
+      "encrypted_note": "The backup is encrypted with a passphrase. If you lose the passphrase the backup cannot be opened; Kut cannot recover it.",
+      "plain_warning": "WARNING: The backup contains the server's private key and the preshared keys and is NOT ENCRYPTED. Keep it somewhere safe or encrypt it with -encrypt.",
+      "pass_prompt": "Backup passphrase: ",
+      "pass_again": "Backup passphrase (again): "
+    },
+    "restore": {
+      "done": {
+        "one": "Restored: {n} file → {data}\nNow start the service: sudo systemctl start kut (the wg configuration is rewritten at startup)\n",
+        "other": "Restored: {n} files → {data}\nNow start the service: sudo systemctl start kut (the wg configuration is rewritten at startup)\n"
+      }
+    }
+  },
+  "err": {
+    "clibackup": {
+      "not_data_dir": "{data} is not a Kut data directory: {err}",
+      "pass_mismatch": "passphrases do not match",
+      "need_file": "-f backup file is required",
+      "service_running": "the kut service is running; stop it first: sudo systemctl stop kut",
+      "not_empty": "{data} is not empty; add -force to overwrite it (existing files are kept as .bak)",
+      "bad_endpoint": "-endpoint: {err}"
+    }
+  }
+}

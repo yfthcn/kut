@@ -1,0 +1,13 @@
+{
+  "webfix": {
+    "qr_label": "QR kodu",
+    "log_system": "sistem",
+    "chart": {
+      "aria": "Trafik grafiği: {range}",
+      "aria_named": "{name} trafik grafiği: {range}"
+    }
+  },
+  "logui": {
+    "local": "yerel"
+  }
+}

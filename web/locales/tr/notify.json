@@ -1,0 +1,14 @@
+{
+  "notify": {
+    "new_ip_login": "Panele yeni bir IP'den giriş yapıldı: {who}",
+    "failed_logins": {
+      "one": "{n} başarısız giriş denemesi ({min} dk içinde): {ip}",
+      "other": "{n} başarısız giriş denemesi ({min} dk içinde): {ip}"
+    },
+    "password_changed": "Parola değiştirildi: {who}",
+    "totp_off": "İki adımlı doğrulama kapatıldı: {who}",
+    "account": "{text} ({who})",
+    "cap": "Saatlik bildirim sınırına ulaşıldı; sonraki bildirimler atlanıyor.",
+    "test": "Test bildirimi: bildirimler çalışıyor."
+  }
+}

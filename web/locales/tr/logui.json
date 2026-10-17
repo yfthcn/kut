@@ -1,0 +1,45 @@
+{
+  "logui": {
+    "title": "Günlük",
+    "intro": "Kim, ne zaman, ne yaptı.",
+    "filter_aria": "Olay türüne göre süz",
+    "search_ph": "Ara: olay, IP, hesap…",
+    "search_aria": "Ara",
+    "account_aria": "Hesap",
+    "range_aria": "Zaman",
+    "all_accounts": "Tüm hesaplar",
+    "refresh": "Yenile",
+    "csv": "CSV indir",
+    "json": "JSON indir",
+    "more": "Daha fazla göster",
+    "clear_filter": "Filtreyi temizle",
+    "empty": "Bu filtreye uyan kayıt yok.",
+    "showing": { "one": "{n} kayıt gösteriliyor", "other": "{n} kayıt gösteriliyor" },
+    "retention_days": { "one": "Son {n} gün saklanır", "other": "Son {n} gün saklanır" },
+    "retention_forever": "Süresiz saklanır",
+    "total": { "one": "toplam {n} olay", "other": "toplam {n} olay" },
+    "oldest": "en eski {date}",
+    "settings_hint": "Süreyi Ayarlar → Veri saklama’dan değiştirebilirsin.",
+    "col": {
+      "time": "Zaman",
+      "from": "Kimden",
+      "account": "Hesap",
+      "event": "Olay"
+    },
+    "group": {
+      "giris": "Giriş/çıkış",
+      "guvenlik": "Başarısız deneme",
+      "cihaz": "Cihaz",
+      "profil": "Profil",
+      "hesap": "Hesap",
+      "ayar": "Ayar",
+      "sistem": "Sistem"
+    },
+    "range": {
+      "all": "Tüm kayıtlar",
+      "hour": "Son 1 saat",
+      "day": "Son 24 saat",
+      "week": "Son 7 gün"
+    }
+  }
+}

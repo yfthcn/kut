@@ -1,0 +1,53 @@
+{
+  "log": {
+    "backup_fail": "Automatic backup failed: {msg}",
+    "backup": {
+      "manual": "Manual backup created: {name}",
+      "download": "Backup downloaded: {name}",
+      "delete": "Backup deleted: {name}"
+    },
+    "restore": {
+      "file": "Restored from backup: {name} (previous state: {pre})",
+      "file_endpoint": "Restored from backup: {name}, endpoint {endpoint} (previous state: {pre})",
+      "upload": "Restored from backup: uploaded file (previous state: {pre})",
+      "upload_endpoint": "Restored from backup: uploaded file, endpoint {endpoint} (previous state: {pre})"
+    },
+    "restart": {
+      "panel": "Kut service restarted from the panel"
+    },
+    "settings": {
+      "backup_pass_cleared": "Backup encryption turned off",
+      "backup_pass_set": "Backup encryption password set",
+      "maint_changed": "Backup and retention settings changed",
+      "notify_changed": "Notification settings changed"
+    },
+    "password_fail": {
+      "backup_owner_pass": "Backup/restore action: owner password wrong",
+      "backup_owner_code": "Backup/restore action: verification code wrong"
+    },
+    "peer_offline": "Device has not connected for 24 hours: {name}",
+    "peer_first": "Device connected for the first time: {name}",
+    "unfreeze_auto": "Freeze period ended, device turned back on: {name}",
+    "peer_expired": "Validity period ended, device turned off: {name}",
+    "schedule": {
+      "start": "Schedule applied — {name}: access hours started",
+      "end": "Schedule applied — {name}: access hours ended"
+    },
+    "rule_schedule": {
+      "start": "Rule schedule applied — “{policy}” profile, {rule}: access started",
+      "end": "Rule schedule applied — “{policy}” profile, {rule}: access ended"
+    },
+    "firewall": {
+      "repaired": "Firewall rules restored to their intended state"
+    }
+  },
+  "logexport": {
+    "col": {
+      "time": "time",
+      "source": "source",
+      "user": "user",
+      "event": "event",
+      "text": "description"
+    }
+  }
+}

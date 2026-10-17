@@ -1,0 +1,22 @@
+{
+  "fw": {
+    "dry": "dry-run: kurallar uygulanmaz, aşağıda olması gerekenler gösteriliyor",
+    "down": "WireGuard arayüzü kapalı",
+    "forward_policy": "FORWARD varsayılan politikası: {policy}",
+    "no_ip6tables": "ip6tables bulunamadı",
+    "skeleton": {
+      "top": "{fam} güvenlik duvarı iskeleti eksik ya da sırası bozuk ({chain} zincirinin en üstü Kut kurallarıyla başlamıyor). Panel birkaç saniye içinde onarır.",
+      "read_failed": "{fam} güvenlik duvarı iskeleti eksik ya da sırası bozuk ({chain} okunamadı: {err}). Panel birkaç saniye içinde onarır.",
+      "nat_jump": "{fam} güvenlik duvarı iskeleti eksik ya da sırası bozuk (nat/POSTROUTING içinde Kut atlaması yok). Panel birkaç saniye içinde onarır.",
+      "chain_missing": "{fam} güvenlik duvarı iskeleti eksik ya da sırası bozuk ({chain} zinciri yok). Panel birkaç saniye içinde onarır."
+    },
+    "chain": {
+      "read_failed": "{fam} {chain} okunamadı",
+      "count": {
+        "one": "{fam} {chain} zincirinde {n} kural var, {want} olmalı",
+        "other": "{fam} {chain} zincirinde {n} kural var, {want} olmalı"
+      },
+      "rule_differs": "{fam} {chain} zincirinin {pos}. kuralı olması gerekenden farklı"
+    }
+  }
+}

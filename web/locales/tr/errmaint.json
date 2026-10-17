@@ -1,0 +1,60 @@
+{
+  "err": {
+    "maint": {
+      "bad_freq": "Yedek sıklığı geçersiz.",
+      "bad_time": "Saat biçimi SS:DD olmalı (ör. 03:30).",
+      "bad_keep": "Saklanacak yedek sayısı 1 ile 60 arasında olmalı.",
+      "bad_log_days": "Günlük süresi en az 7 gün olmalı (0 = sınırsız).",
+      "panic": "Beklenmeyen bir hata oldu; ayrıntı sunucu günlüğünde."
+    },
+    "backup": {
+      "create_failed": "Yedek alınamadı: {msg}",
+      "bad_name": "Geçersiz yedek adı.",
+      "not_found": "Yedek bulunamadı.",
+      "too_large": "Dosya çok büyük (en çok {mb} MB).",
+      "upload_bad_form": "Yükleme geçersiz: dosya ve alanlar multipart/form-data olarak gönderilmeli.",
+      "upload_no_file": "Yüklemede yedek dosyası yok.",
+      "upload_unknown_field": "Yüklemede bilinmeyen alan: {name}",
+      "upload_duplicate_field": "Yüklemede {name} alanı birden çok kez var.",
+      "owner_bad_password": "Sahip parolası yanlış.",
+      "owner_code_required": "İki adımlı doğrulama açık: doğrulama kodu gerekli.",
+      "owner_bad_code": "Doğrulama kodu yanlış.",
+      "unreadable": "yedek okunamadı: {msg}",
+      "corrupt": "yedek bozuk: {msg}",
+      "unexpected_entry": "yedekte beklenmeyen kayıt: {name}",
+      "duplicate_entry": "yedekte {name} iki kez var",
+      "entry_too_large": "yedekteki {name} çok büyük (en çok {mb} MB)",
+      "missing_file": "yedekte {name} yok; bu geçerli bir Kut yedeği değil",
+      "invalid_file": "yedekteki {name} geçersiz",
+      "newer_version": "yedek daha yeni bir Kut sürümünden; önce Kut'u güncelle",
+      "rejected": "yedek reddedildi: {msg}",
+      "pre_backup_failed": "geri yükleme öncesi yedek alınamadı: {msg}",
+      "write_failed": "{name} yazılamadı: {msg}",
+      "restore_failed": "{msg} (önceki durum {pre} yedeğinde)"
+    },
+    "notify": {
+      "bad_token": "Bot jetonu biçimi yanlış (örnek: 123456789:AAH…). @BotFather'dan aldığını olduğu gibi yapıştır.",
+      "bad_chat_id": "Sohbet kimliği yalnızca rakamlardan oluşur. \"Sohbeti bul\" düğmesini kullan.",
+      "telegram_incomplete": "Telegram'ı açmak için bot jetonu ve sohbet kimliği gerekir.",
+      "bad_webhook_url": "Webhook adresi http:// ya da https:// ile başlamalı.",
+      "webhook_no_url": "Webhook'u açmak için adres gerekir.",
+      "bad_quiet_time": "Sessiz saat biçimi SS:DD olmalı (ör. 23:00).",
+      "quiet_incomplete": "Sessiz saatler için başlangıç ve bitiş birlikte girilmeli.",
+      "no_channel": "Önce bir kanal açıp kaydet.",
+      "no_token": "Önce bot jetonunu yapıştır.",
+      "no_chat_yet": "Henüz mesaj yok. Telegram'da @{bot} botuna git, /start yaz, sonra tekrar dene.",
+      "telegram_unreachable": "Telegram'a ulaşılamadı: {msg}",
+      "telegram_bad_response": "Telegram beklenmeyen yanıt verdi.",
+      "telegram_error": "Telegram: {msg}",
+      "webhook_invalid": "webhook adresi geçersiz",
+      "webhook_unreachable": "webhook hedefine ulaşılamadı",
+      "webhook_rejected": "webhook hedefi isteği kabul etmedi"
+    },
+    "update": {
+      "unreachable": "GitHub'a bağlanılamadı",
+      "no_release": "Henüz yayınlanmış bir sürüm yok",
+      "http": "GitHub {status} döndürdü",
+      "bad_response": "Yanıt okunamadı"
+    }
+  }
+}
